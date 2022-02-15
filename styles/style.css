@@ -241,12 +241,8 @@ h3 {
 }
 
 .savon img {
-	height: 11rem;
-	min-width: 11rem;
 	margin-right: 1em;
 	border-radius: 4px;
-	image-rendering: pixelated;
-	image-rendering: optimizeSpeed;
 }
 .savon_wrap .info_box {
 	display: flex;

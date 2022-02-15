@@ -1,39 +1,44 @@
 import Head from 'next/head'
+import Image from 'next/image'
+import path from 'path'
+import fs from 'fs'
 
-const Home = () => (
-	<>
-		<Head>
-			<title>Savonnerie La Curieuse - Création de savons écologiques</title>
-			<meta name='keywords' content='savon, Vollore-Ville, ecologique,cosmetique, soin' />
-			<meta
-				name='description'
-				content='Des savons 100% fait main crées à Vollore-Ville (Auvergne) selon la méthode ancestrale de saponification à froid.'
-			/>
-			<meta name='author' content='Valérie Cartailler' />
-			<meta name='viewport' content='width=device-width, initial-scale=1' />
-			<meta charset='utf-8' />
-			<link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png?v=rMJOo8Wqzp' />
-			<link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png?v=rMJOo8Wqzp' />
-			<link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png?v=rMJOo8Wqzp' />
-			<link rel='manifest' href='site.webmanifest?v=rMJOo8Wqzp' />
-			<link rel='mask-icon' href='safari-pinned-tab.svg?v=rMJOo8Wqzp' color='#e77224' />
-			<link rel='shortcut icon' href='favicon.ico?v=rMJOo8Wqzp' />
-			<meta name='msapplication-TileColor' content='#e77224' />
-			<meta name='theme-color' content='#e77224' />
-			<link
-				href='https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap'
-				rel='stylesheet'
-			/>
-		</Head>
+const Home = ({ events }) => {
+	console.log(events)
 
-		<body>
-			<div class='background'>
-				<div class='colour'></div>
-				<div class='image'></div>
+	return (
+		<>
+			<Head>
+				<title>Savonnerie La Curieuse - Création de savons écologiques</title>
+				<meta name='keywords' content='savon, Vollore-Ville, ecologique,cosmetique, soin' />
+				<meta
+					name='description'
+					content='Des savons 100% fait main crées à Vollore-Ville (Auvergne) selon la méthode ancestrale de saponification à froid.'
+				/>
+				<meta name='author' content='Valérie Cartailler' />
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
+				<meta charset='utf-8' />
+				<link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png?v=rMJOo8Wqzp' />
+				<link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png?v=rMJOo8Wqzp' />
+				<link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png?v=rMJOo8Wqzp' />
+				<link rel='manifest' href='site.webmanifest?v=rMJOo8Wqzp' />
+				<link rel='mask-icon' href='safari-pinned-tab.svg?v=rMJOo8Wqzp' color='#e77224' />
+				<link rel='shortcut icon' href='favicon.ico?v=rMJOo8Wqzp' />
+				<meta name='msapplication-TileColor' content='#e77224' />
+				<meta name='theme-color' content='#e77224' />
+				<link
+					href='https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+					rel='stylesheet'
+				/>
+			</Head>
+
+			<div className='background'>
+				<div className='colour'></div>
+				<div className='image'></div>
 			</div>
 
-			<div class='wrapper'>
-				<div class='accueil'>
+			<div className='wrapper'>
+				<div className='accueil'>
 					<nav>
 						<a href='#saf'>la saponification à froid</a>
 						<a href='#savons'>les savons</a>
@@ -41,7 +46,7 @@ const Home = () => (
 						<a href='#contact'>contact</a>
 					</nav>
 
-					<div class='titre'>
+					<div className='titre'>
 						<h1>
 							<span>Savonnerie</span>
 							<br />
@@ -52,26 +57,26 @@ const Home = () => (
 				</div>
 			</div>
 
-			<div class='content'>
-				<div class='intro'>
-					<p class='fat'>
+			<div className='content'>
+				<div className='intro'>
+					<p className='fat'>
 						C'est à Vollore-Ville au coeur du parc régional Livradois-Forez que j'ai choisi de créer des savons
 						surgras à partir du procédé de saponification à froid.
 					</p>
-					<p class='fat'>
+					<p className='fat'>
 						Motivée par le désir de faire partager au plus grand nombre les bienfaits d'un savon doux et
 						écologique, je crée en mars 2016 la savonnerie La Curieuse.
 					</p>
 				</div>
 
-				<div id='saf' class='categorie'>
+				<div id='saf' className='categorie'>
 					<div></div>
 					<h2>La saponification à froid</h2>
 				</div>
 
-				<div class='wrapper'>
-					<div class='fabr_intro'>
-						<p class='fat'>
+				<div className='wrapper'>
+					<div className='fabr_intro'>
+						<p className='fat'>
 							Cette méthode de fabrication artisanale garantit la présence de glycérine dans le savon et permet
 							de conserver une grande partie des propriétés bienfaisantes des huiles, beurres et huiles
 							essentielles utilisés. <br />
@@ -79,69 +84,99 @@ const Home = () => (
 						</p>
 					</div>
 
-					<div class='fabr_wrap'>
+					<div className='fabr_wrap'>
 						<h3>création du savon Fanny</h3>
 
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/bain_mari.jpg' alt='Bain marie de karité' />
+						<div className='fabr_desc'>
+							<Image
+								height={230}
+								width={230}
+								src='/images/fabrication/bain_mari.jpg'
+								alt='Bain marie de karité'
+							/>
 							<p>
 								1- Les beurres de coco et de karité fondent doucement au bain-marie. Température: 35°C - 40°C.
 							</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/pesee.jpg' alt='Pesé des huiles' />
+						<div className='fabr_desc'>
+							<Image height={230} width={230} src='/images/fabrication/pesee.jpg' alt='Pesé des huiles' />
 							<p>
 								2- En attendant, je pèse les huiles essentielles et le macérât de calendula qui sera ajouté en
 								surgraissage.
 							</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/melange.jpg' alt='Ajout de soude dans solution' />
+						<div className='fabr_desc'>
+							<Image
+								height={230}
+								width={230}
+								src='/images/fabrication/melange.jpg'
+								alt='Ajout de soude dans solution'
+							/>
 							<p>
 								3- J'incorpore la solution de soude préparée en amont avec les huiles et les beurres fondus. Le
 								processus de saponification commence.
 							</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/mixeur.jpg' alt='Mixage de pâte' />
+						<div className='fabr_desc'>
+							<Image height={230} width={230} src='/images/fabrication/mixeur.jpg' alt='Mixage de pâte' />
 							<p>4- Méthode ancestrale d'accord, mais avec mixeur.</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/surgraissage.jpg' alt="Rajout d'huile dans pate" />
+						<div className='fabr_desc'>
+							<Image
+								height={230}
+								width={230}
+								src='/images/fabrication/surgraissage.jpg'
+								alt="Rajout d'huile dans pate"
+							/>
 							<p>
 								5- La pâte épaissit et forme une trace. C'est le moment d'ajouter les huiles essentielles et le
 								macérât.
 							</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/petales.jpg' alt='Rajout de pétales' />
+						<div className='fabr_desc'>
+							<Image height={230} width={230} src='/images/fabrication/petales.jpg' alt='Rajout de pétales' />
 							<p>
 								6- Après un dernier tour de mixeur j'ajoute quelques pétales <br />
 								de calendula pour faire joli !
 							</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/coulee.jpg' alt='Coulage de pâte dans moule' />
+						<div className='fabr_desc'>
+							<Image
+								height={230}
+								width={230}
+								src='/images/fabrication/coulee.jpg'
+								alt='Coulage de pâte dans moule'
+							/>
 							<p>7- La pâte est coulée dans le grand moule chemisé.</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/deco.jpg' alt='Rajout de pétales sur moule' />
+						<div className='fabr_desc'>
+							<Image
+								height={230}
+								width={230}
+								src='/images/fabrication/deco.jpg'
+								alt='Rajout de pétales sur moule'
+							/>
 							<p>
 								8- Quelques pétales de plus ! <br />
 								Le moule sera ensuite isolé thermiquement pendant 24 à 48h.
 							</p>
 						</div>
-						<div class='fabr_desc'>
-							<img src='/images/fabrication/decoupe.jpg' alt='Decoupe de savon' />
+						<div className='fabr_desc'>
+							<Image height={230} width={230} src='/images/fabrication/decoupe.jpg' alt='Decoupe de savon' />
 							<p>9- Le pain de savon est démoulé puis coupé en tranches.</p>
 						</div>
-						<div id='hat' class='fabr_desc'>
-							<img src='/images/fabrication/armoire.jpg' alt="Savonnière range dans l'armoire" />
+						<div id='hat' className='fabr_desc'>
+							<Image
+								height={230}
+								width={230}
+								src='/images/fabrication/armoire.jpg'
+								alt="Savonnière range dans l'armoire"
+							/>
 							<p>10- Ils sècheront durant 4 à 6 semaines dans l'armoire de cure.</p>
 						</div>
 					</div>
-					<div class='info_wrap'>
-						<div class='info_box'>
+					<div className='info_wrap'>
+						<div className='info_box'>
 							<h3>La saponification</h3>
 							<p>
 								<span>
@@ -153,7 +188,7 @@ const Home = () => (
 								<span>Il ne reste aucune trace de soude dans un savon "fini".</span>
 							</p>
 						</div>
-						<div class='info_box'>
+						<div className='info_box'>
 							<h3>Le surgras</h3>
 							<p>
 								<span>
@@ -171,16 +206,16 @@ const Home = () => (
 					</div>
 				</div>
 
-				<div id='savons' class='categorie'>
+				<div id='savons' className='categorie'>
 					<div></div>
 					<h2>Les savons</h2>
 				</div>
 
-				<div class='wrapper'>
-					<div class='savon_wrap'>
-						<div class='savon' id='muesli'>
-							<div class='inner'>
-								<img src='/images/savons/muesli.jpg' alt='Savon Muesli' />
+				<div className='wrapper'>
+					<div className='savon_wrap'>
+						<div className='savon' id='muesli'>
+							<div className='inner'>
+								<Image src='/images/savons/muesli.jpg' height={128} width={128} alt='Savon Muesli' />
 								<div>
 									<h3>Müesli</h3>
 									<p>
@@ -193,15 +228,15 @@ const Home = () => (
 									</p>
 								</div>
 							</div>
-							<div class='compo'>
+							<div className='compo'>
 								Composition: huile d'olive, huile de coco, beurre de karité, huile de tournesol partiellement
 								saponifiés, eau, glycérine, amandes, flocons d'avoine, baies de goji, huiles essentielles
 								d'orange et de sauge sclarée
 							</div>
 						</div>
-						<div class='savon' id='delice'>
-							<div class='inner'>
-								<img src='/images/savons/delice.jpg' alt='Savon Délice' />
+						<div className='savon' id='delice'>
+							<div className='inner'>
+								<Image src='/images/savons/delice.jpg' height={128} width={128} alt='Savon Délice' />
 								<div>
 									<h3>Délice</h3>
 									<p>
@@ -214,14 +249,14 @@ const Home = () => (
 									</p>
 								</div>
 							</div>
-							<div class='compo'>
+							<div className='compo'>
 								Composition: huile d'olive, huile de coco, beurre de karité, huile de tournesol partiellement
 								saponifiés, eau, glycérine, beurre de cacao
 							</div>
 						</div>
-						<div class='savon' id='fanny'>
-							<div class='inner'>
-								<img src='/images/savons/fanny.jpg' alt='Savon Fanny' />
+						<div className='savon' id='fanny'>
+							<div className='inner'>
+								<Image src='/images/savons/fanny.jpg' height={128} width={128} alt='Savon Fanny' />
 								<div>
 									<h3>Fanny</h3>
 									<p>
@@ -234,14 +269,14 @@ const Home = () => (
 									</p>
 								</div>
 							</div>
-							<div class='compo'>
+							<div className='compo'>
 								Composition: huile d'olive, huile de coco, beurre de karité, huile de tournesol partiellement
 								saponifiés, eau, glycérine, macérât de calendula, huiles essentielles de lavandin et de litsée
 							</div>
 						</div>
-						<div class='savon' id='thecitron'>
-							<div class='inner'>
-								<img src='/images/savons/thecitron.jpg' alt='Savon Thé Citron' />
+						<div className='savon' id='thecitron'>
+							<div className='inner'>
+								<Image src='/images/savons/thecitron.jpg' height={128} width={128} alt='Savon Thé Citron' />
 								<div>
 									<h3>Thé citron</h3>
 									<p>
@@ -253,15 +288,15 @@ const Home = () => (
 									</p>
 								</div>
 							</div>
-							<div class='compo'>
+							<div className='compo'>
 								Composition: huile d'olive, huile de coco, beurre de karité, huile de ricin partiellement
 								saponifiés, eau, glycérine, huile de jojoba, argile ghassoul, huiles essentielles de romarin et
 								de litsée
 							</div>
 						</div>
-						<div class='savon romarin' id='theromarin'>
-							<div class='inner'>
-								<img src='/images/savons/theromarin.jpg' alt='Savon Thé Romarin' />
+						<div className='savon romarin' id='theromarin'>
+							<div className='inner'>
+								<Image src='/images/savons/theromarin.jpg' height={128} width={128} alt='Savon Thé Romarin' />
 								<div>
 									<h3>Thé romarin</h3>
 									<p>
@@ -273,15 +308,15 @@ const Home = () => (
 									</p>
 								</div>
 							</div>
-							<div class='compo'>
+							<div className='compo'>
 								Composition: huile d'olive, huile de coco, huile de ricin, beurre de karité partiellement
 								saponifiés, eau, glycérine, huile de jojoba, argile ghassoul, huile essentielle de romarin
 							</div>
 						</div>
 
-						<div class='savon cesar' id='cesar'>
-							<div class='inner'>
-								<img src='/images/savons/cesar.jpg' alt='Savon César' />
+						<div className='savon cesar' id='cesar'>
+							<div className='inner'>
+								<Image src='/images/savons/cesar.jpg' height={128} width={128} alt='Savon César' />
 								<div>
 									<h3>César - Savon ménager</h3>
 									<p>
@@ -292,12 +327,12 @@ const Home = () => (
 									</p>
 								</div>
 							</div>
-							<div class='compo'>
+							<div className='compo'>
 								Composition: huile d'olive, huile de coco saponifiées, eau, glycérine, ...c'est tout !
 							</div>
 						</div>
 
-						<div class='info_box'>
+						<div className='info_box'>
 							<h3>La lessive liquide: simple, efficace et naturelle</h3>
 							<div>
 								<p>• 50g de César râpé dans un saladier avec la râpe à fromage</p>
@@ -322,7 +357,7 @@ const Home = () => (
 							</div>
 						</div>
 
-						<div class='info_box'>
+						<div className='info_box'>
 							<h3>Conseils de savonnière pour une peau apaisée.</h3>
 							<div>
 								<p>• Ecourtez vos longues, longues, douches trop chaudes.</p>
@@ -339,15 +374,15 @@ const Home = () => (
 					</div>
 				</div>
 
-				<div id='ouTrouver' class='categorie'>
+				<div id='ouTrouver' className='categorie'>
 					<div></div>
 					<h2>Où les trouver ?</h2>
 				</div>
 
-				<div class='wrapper'>
-					<div class='trouver_wrap'>
+				<div className='wrapper'>
+					<div className='trouver_wrap'>
 						<h3>A la savonnerie</h3>
-						<div class='boutique_wrap'>
+						<div className='boutique_wrap'>
 							<p>
 								Directement à la savonnerie. S'assurer de la disponibilité de la savonnière par un appel ou un
 								<a href='tel:+33643693967'>SMS</a> un jour ou deux à l'avance. <br />
@@ -356,7 +391,7 @@ const Home = () => (
 							</p>
 						</div>
 						<h3>En Boutique</h3>
-						<div class='boutique_wrap'>
+						<div className='boutique_wrap'>
 							<div>
 								<h4>Henne Indigo et Compagnie</h4>
 								<li>
@@ -364,7 +399,7 @@ const Home = () => (
 										henneindigoetcompagnie.fr
 									</a>
 								</li>
-								<li class='tag'>Boutique en ligne</li>
+								<li className='tag'>Boutique en ligne</li>
 							</div>
 							<div>
 								<h4>Épicerie Proxy Vollore-Ville</h4>
@@ -397,7 +432,7 @@ const Home = () => (
 								</li>
 								<li>25 rue Fileterie 63600 Ambert</li>
 
-								<li class='tag'>savon ménager César uniquement</li>
+								<li className='tag'>savon ménager César uniquement</li>
 							</div>
 							<div>
 								<h4>L'auvergne en Vrac</h4>
@@ -408,7 +443,7 @@ const Home = () => (
 								</li>
 								<li>lauvergne.envrac@gmail.com</li>
 
-								<li class='tag'>savon ménager César uniquement</li>
+								<li className='tag'>savon ménager César uniquement</li>
 							</div>
 							<div>
 								<h4>L'Orange Bleue (Boutique associative & bio-équitable)</h4>
@@ -416,7 +451,7 @@ const Home = () => (
 							</div>
 						</div>
 						<h3>Aux marchés</h3>
-						<div class='boutique_wrap'>
+						<div className='boutique_wrap'>
 							<div>
 								<h4>Billom</h4>
 								<li>Place de la Halle, un lundi sur deux</li>
@@ -440,10 +475,10 @@ const Home = () => (
 							</div>
 						</div>
 					</div>
-					<div class='wrapper'>
+					<div className='wrapper'>
 						<h3 id='events'>Evènements 2021</h3>
 
-						<div class='table_wrap'>
+						<div className='table_wrap'>
 							<table>
 								<thead>
 									<tr>
@@ -640,20 +675,20 @@ const Home = () => (
 					</div>
 				</div>
 
-				<div id='contact' class='categorie'>
+				<div id='contact' className='categorie'>
 					<div></div>
 					<h2>Me contacter</h2>
 				</div>
 
-				<div class='wrapper'>
-					<div class='adresse'>
+				<div className='wrapper'>
+					<div className='adresse'>
 						<div id='map'>
 							<p id='mapText'>
 								Afficher sur la carte
 								<noscript>La carte n'est pas disponible</noscript>
 							</p>
 						</div>
-						<div class='location'>
+						<div className='location'>
 							<p>
 								Valérie Cartailler
 								<br />
@@ -672,10 +707,10 @@ const Home = () => (
 					</div>
 				</div>
 
-				<div class='wrapper'>
+				<div className='wrapper'>
 					<h2 id='faq'>Foire Aux Questions</h2>
 
-					<div class='question'>
+					<div className='question'>
 						<h3>Vos savons sont-ils bio ?</h3>
 						<p>
 							<span>
@@ -688,7 +723,7 @@ const Home = () => (
 							<span>Les savons sont emballés dans des sachets de cellophane végétale compostable.</span>
 						</p>
 					</div>
-					<div class='question'>
+					<div className='question'>
 						<h3>J'ai les cheveux secs, le savon shampooing Thé Citron me convient-il ?</h3>
 						<p>
 							<span>
@@ -698,7 +733,7 @@ const Home = () => (
 							</span>
 						</p>
 					</div>
-					<div class='question'>
+					<div className='question'>
 						<h3>Curieuse, d'accord, mais cette savonnerie est elle sérieuse ?</h3>
 						<p>
 							<span>
@@ -708,7 +743,7 @@ const Home = () => (
 							</span>
 						</p>
 					</div>
-					<div class='question'>
+					<div className='question'>
 						<h3>Est-ce qu'il y a des ingrédients d'origine animale dans vos savons ?</h3>
 						<p>
 							<span>
@@ -717,7 +752,7 @@ const Home = () => (
 							</span>
 						</p>
 					</div>
-					<div class='question'>
+					<div className='question'>
 						<h3>Vous avez du savon au lait d'ânesse ?</h3>
 						<p>
 							<span>Non.</span>
@@ -726,8 +761,8 @@ const Home = () => (
 				</div>
 			</div>
 			<footer>
-				<div class='foot_wrap'>
-					<div class='index'>
+				<div className='foot_wrap'>
+					<div className='index'>
 						<li>
 							<a href='#savons'>Les savons</a>
 						</li>
@@ -739,7 +774,7 @@ const Home = () => (
 						</li>
 					</div>
 
-					<div class='logo'>
+					<div className='logo'>
 						<h2>
 							Savonnerie
 							<br />
@@ -751,8 +786,22 @@ const Home = () => (
 					</div>
 				</div>
 			</footer>
-		</body>
-	</>
-)
+		</>
+	)
+}
+
+export async function getStaticProps() {
+	const dataFilePath = path.join(process.cwd(), 'events', 'events.json')
+	console.log(dataFilePath) // will be YourProject/events/events.json
+
+	const fileContents = fs.readFileSync(dataFilePath, 'utf8')
+	const data = JSON.parse(fileContents)
+
+	return {
+		props: {
+			events: data,
+		},
+	}
+}
 
 export default Home
