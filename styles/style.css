@@ -292,6 +292,10 @@ h3 {
 	list-style: none;
 }
 
+.boutique_wrap li p {
+	margin: 0;
+}
+
 .boutique_wrap li a {
 	display: inline-block;
 	color: #444;
