@@ -10,40 +10,44 @@ const Table = (params) => {
 	}
 
 	return (
-		<div className='table_wrap'>
-			<table>
-				<thead>
-					<tr>
-						<td>Mars</td>
-						<td>avril</td>
-						<td>mai</td>
-						<td>juin</td>
-						<td>juillet</td>
-						<td>août</td>
-						<td>septembre</td>
-						<td>octobre</td>
-						<td>novembre</td>
-						<td>décembre</td>
-					</tr>
-				</thead>
-				<tbody>
-					{fullTable.map((row, i) => (
-						<tr key={i}>
-							{row.map(({ nom, date, horaire, adresse, note }) => (
-								<td key={nom}>
-									<span>{date}</span> <br />
-									<span>{horaire}</span> <br />
-									<strong>{nom}</strong>
-									<br />
-									<small>{adresse}</small>
-									<br />
-									{note ? <small>{note}</small> : ''}
-								</td>
-							))}
+		<div className='wrapper'>
+			<h3 id='events'>Evènements 2021</h3>
+
+			<div className='table_wrap'>
+				<table>
+					<thead>
+						<tr>
+							<td>Mars</td>
+							<td>avril</td>
+							<td>mai</td>
+							<td>juin</td>
+							<td>juillet</td>
+							<td>août</td>
+							<td>septembre</td>
+							<td>octobre</td>
+							<td>novembre</td>
+							<td>décembre</td>
 						</tr>
-					))}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{fullTable.map((row, i) => (
+							<tr key={i}>
+								{row.map(({ nom, date, horaire, adresse, note }) => (
+									<td key={nom}>
+										<span>{date}</span> <br />
+										<span>{horaire}</span> <br />
+										<strong>{nom}</strong>
+										<br />
+										<small>{adresse}</small>
+										<br />
+										{note ? <small>{note}</small> : ''}
+									</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	)
 }

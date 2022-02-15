@@ -125,9 +125,7 @@ const Home = (params) => {
 					<h2>Les savons</h2>
 				</div>
 
-				<div className='wrapper'>
-					<Savons {...params} />
-				</div>
+				<Savons {...params} />
 
 				<div id='ouTrouver' className='categorie'>
 					<div></div>
@@ -136,12 +134,7 @@ const Home = (params) => {
 
 				<div className='wrapper'>
 					<Disponible {...params} />
-
-					<div className='wrapper'>
-						<h3 id='events'>Evènements 2021</h3>
-
-						<Table {...params} />
-					</div>
+					<Table {...params} />
 				</div>
 
 				<div id='contact' className='categorie'>
