@@ -33,7 +33,7 @@ const Table = (params) => {
 						{fullTable.map((row, i) => (
 							<tr key={i}>
 								{row.map(({ nom, date, horaire, adresse, note }) => (
-									<td key={nom}>
+									<td key={nom + date}>
 										<span>{date}</span> <br />
 										<span>{horaire}</span> <br />
 										<strong>{nom}</strong>

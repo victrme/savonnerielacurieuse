@@ -7,6 +7,8 @@ import Fabrication from '../components/Fabrication'
 import Disponible from '../components/Disponible'
 import Questions from '../components/Questions'
 import Table from '../components/table'
+import Categorie from '../components/Categorie'
+import Contact from '../components/Contact'
 
 const Home = (params) => {
 	return (
@@ -72,106 +74,20 @@ const Home = (params) => {
 					</p>
 				</div>
 
-				<div id='saf' className='categorie'>
-					<div></div>
-					<h2>La saponification à froid</h2>
-				</div>
+				<Categorie id='saf' title='La saponification à froid' />
+				<Fabrication {...params} />
 
-				<div className='wrapper'>
-					<div className='fabr_intro'>
-						<p className='fat'>
-							Cette méthode de fabrication artisanale garantit la présence de glycérine dans le savon et permet
-							de conserver une grande partie des propriétés bienfaisantes des huiles, beurres et huiles
-							essentielles utilisés. <br />
-							C'est une méthode écologique dont le procédé de fabrication est sobre en énergie.
-						</p>
-					</div>
-
-					<Fabrication {...params} />
-
-					<div className='info_wrap'>
-						<div className='info_box'>
-							<h3>La saponification</h3>
-							<p>
-								<span>
-									La saponification est la réaction chimique qui transforme le mélange huile + soude en savon
-									+ glycérine.
-								</span>
-								<br />
-								<br />
-								<span>Il ne reste aucune trace de soude dans un savon "fini".</span>
-							</p>
-						</div>
-						<div className='info_box'>
-							<h3>Le surgras</h3>
-							<p>
-								<span>
-									En cours de fabrication, j'enrichis mes savons d'huiles aux vertus apaisantes,
-									régénérantes, et nourrissantes. Ces huiles, ajoutées aux corps gras déjà saponifiés
-									viennent sur-graisser le savon.
-								</span>
-								<br />
-								<span>
-									Un savon surgras est un savon qui ne se contente pas de laver, il permet aussi au film
-									hydrolipidique de la peau de se restaurer plus rapidement.
-								</span>
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div id='savons' className='categorie'>
-					<div></div>
-					<h2>Les savons</h2>
-				</div>
-
+				<Categorie id='savons' title='Les savons' />
 				<Savons {...params} />
 
-				<div id='ouTrouver' className='categorie'>
-					<div></div>
-					<h2>Où les trouver ?</h2>
-				</div>
+				<Categorie id='ouTrouver' title='Où les trouver ?' />
+				<Disponible {...params} />
+				<Table {...params} />
 
-				<div className='wrapper'>
-					<Disponible {...params} />
-					<Table {...params} />
-				</div>
+				<Categorie id='contact' title='Me contacter' />
+				<Contact></Contact>
 
-				<div id='contact' className='categorie'>
-					<div></div>
-					<h2>Me contacter</h2>
-				</div>
-
-				<div className='wrapper'>
-					<div className='adresse'>
-						<div id='map'>
-							<p id='mapText'>
-								Afficher sur la carte
-								<noscript>La carte n'est pas disponible</noscript>
-							</p>
-						</div>
-						<div className='location'>
-							<p>
-								Valérie Cartailler
-								<br />
-								Rue du Château
-								<br />
-								63120 Vollore-Ville
-							</p>
-							<p>
-								savonnerielacurieuse
-								<wbr />
-								@gmail.com
-								<br />
-								06 43 69 39 67
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div className='wrapper'>
-					<Questions {...params} />
-				</div>
+				<Questions {...params} />
 			</div>
 			<footer>
 				<div className='foot_wrap'>
