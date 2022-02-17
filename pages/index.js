@@ -10,7 +10,7 @@ import Table from '../components/table'
 import Categorie from '../components/Categorie'
 import Contact from '../components/Contact'
 
-const Home = (params) => {
+const Home = (props) => {
 	return (
 		<>
 			<Head>
@@ -75,19 +75,19 @@ const Home = (params) => {
 				</div>
 
 				<Categorie id='saf' title='La saponification à froid' />
-				<Fabrication {...params} />
+				<Fabrication {...props} />
 
 				<Categorie id='savons' title='Les savons' />
-				<Savons {...params} />
+				<Savons {...props} />
 
 				<Categorie id='ouTrouver' title='Où les trouver ?' />
-				<Disponible {...params} />
-				<Table {...params} />
+				<Disponible {...props} />
+				<Table />
 
 				<Categorie id='contact' title='Me contacter' />
 				<Contact></Contact>
 
-				<Questions {...params} />
+				<Questions {...props} />
 			</div>
 			<footer>
 				<div className='foot_wrap'>
@@ -120,8 +120,8 @@ const Home = (params) => {
 }
 
 export async function getStaticProps() {
-	const dataFilePath = path.join(process.cwd(), 'events', 'database.json')
-	console.log(dataFilePath) // will be YourProject/events/events.json
+	const dataFilePath = path.join(process.cwd(), 'public', 'database.json')
+	console.log(dataFilePath) // will be YourProject/api/api.json
 
 	const fileContents = fs.readFileSync(dataFilePath, 'utf8')
 	const data = JSON.parse(fileContents)

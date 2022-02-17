@@ -359,6 +359,9 @@ tbody td {
 	border: 1px solid #ddd;
 	font-weight: normal;
 }
+tbody td p {
+	margin: 0.4em;
+}
 
 table small {
 	color: #777;
@@ -371,48 +374,6 @@ table .annule {
 
 table .annule b {
 	color: #f00;
-}
-
-#map {
-	position: relative;
-	width: 50%;
-	max-width: 600px;
-	height: 400px;
-	border-radius: 8px;
-	background-position: 50%;
-	background-size: cover;
-}
-#map p {
-	width: 100%;
-	height: calc(100% - 160px);
-	margin: 0;
-	padding-top: 160px;
-	font-size: 1.5rem;
-	color: #eee;
-	text-align: center;
-	text-shadow: 2px 2px #222;
-	cursor: pointer;
-	background-color: rgba(0, 0, 0, 0.2);
-	transition: all 0.2s;
-}
-#map p:hover {
-	background-color: rgba(0, 0, 0, 0.5);
-	transition: all 0.2s;
-}
-.ol-viewport {
-	position: absolute !important;
-	top: 0 !important;
-}
-#map:-webkit-full-screen {
-	height: 100%;
-	max-width: 100%;
-}
-#map:fullscreen {
-	height: 100%;
-	max-width: 100%;
-}
-.ol-rotate {
-	top: 3em;
 }
 
 .adresse {

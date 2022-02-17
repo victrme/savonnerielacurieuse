@@ -1,14 +1,8 @@
-const Table = (params) => {
-	let row = []
-	const fullTable = []
-	const maxRows = Math.max(...Object.values(params.events).map((a) => a.length))
+import useSWR from 'swr'
 
-	for (let i = 0; i < maxRows; i++) {
-		Object.values(params.events).forEach((elem) => row.push(elem[i] ? elem[i] : {}))
-		fullTable.push(row)
-		row = []
-	}
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
+const TableBody = ({ liste }) => {
 	return (
 		<div className='wrapper'>
 			<h3 id='events'>Evènements 2021</h3>
@@ -30,17 +24,25 @@ const Table = (params) => {
 						</tr>
 					</thead>
 					<tbody>
-						{fullTable.map((row, i) => (
+						{liste.map((row, i) => (
 							<tr key={i}>
-								{row.map(({ nom, date, horaire, adresse, note }) => (
-									<td key={nom + date}>
-										<span>{date}</span> <br />
-										<span>{horaire}</span> <br />
-										<strong>{nom}</strong>
-										<br />
-										<small>{adresse}</small>
-										<br />
-										{note ? <small>{note}</small> : ''}
+								{row.map(({ nom, date, horaire, adresse, note }, i) => (
+									<td key={i}>
+										<p>{date}</p>
+										{horaire ? <p>{horaire}</p> : ''}
+										<p>
+											<strong>{nom}</strong>
+										</p>
+										<p>
+											<small>{adresse}</small>
+										</p>
+										{note ? (
+											<p>
+												<small>{note}</small>
+											</p>
+										) : (
+											''
+										)}
 									</td>
 								))}
 							</tr>
@@ -50,6 +52,34 @@ const Table = (params) => {
 			</div>
 		</div>
 	)
+}
+
+const Table = () => {
+	const { data, error } = useSWR('/events.json', fetcher)
+
+	//
+	// Events liste les mois en ligne selon le mois avec le plus d'events
+	// juillet => 3 events => 3 lignes
+	// [[mars ... decembre], [mars ... decembre], [mars ... decembre]]
+	//
+
+	if (error || !data) {
+		return <TableBody liste={Array(3).fill(Array(10).fill({}))}></TableBody>
+	}
+
+	if (data) {
+		const maxRows = Math.max(...Object.values(data).map((a) => a.length))
+		const fullTable = []
+		let row = []
+
+		for (let i = 0; i < maxRows; i++) {
+			Object.values(data).forEach((elem) => row.push(elem[i] ? elem[i] : {}))
+			fullTable.push(row)
+			row = []
+		}
+
+		return <TableBody liste={fullTable}></TableBody>
+	}
 }
 
 export default Table
