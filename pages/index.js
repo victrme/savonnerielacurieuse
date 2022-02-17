@@ -9,6 +9,9 @@ import Questions from '../components/Questions'
 import Categorie from '../components/Categorie'
 import Contact from '../components/Contact'
 
+import { getPlaiceholder } from 'plaiceholder'
+import { BlurhashCanvas } from 'react-blurhash'
+
 const Home = (props) => {
 	return (
 		<>
@@ -123,6 +126,23 @@ export async function getStaticProps() {
 	const dataFilePath = path.join(process.cwd(), 'public', 'database.json')
 	const fileContents = fs.readFileSync(dataFilePath, 'utf8')
 	const data = JSON.parse(fileContents)
+
+	const imagePaths = data.fabrication.map((item) => item.src + '.jpg')
+
+	const images = await Promise.all(
+		imagePaths.map(async (src) => {
+			const { blurhash, img } = await getPlaiceholder('/images/fabrication/' + src)
+
+			return {
+				...img,
+				alt: '',
+				title: '',
+				blurhash,
+			}
+		})
+	).then((values) => values)
+
+	console.log(images)
 
 	return {
 		props: {
