@@ -6,7 +6,6 @@ import Savons from '../components/Savons'
 import Fabrication from '../components/Fabrication'
 import Disponible from '../components/Disponible'
 import Questions from '../components/Questions'
-import Table from '../components/table'
 import Categorie from '../components/Categorie'
 import Contact from '../components/Contact'
 
@@ -23,14 +22,15 @@ const Home = (props) => {
 				<meta name='author' content='Valérie Cartailler' />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<meta charset='utf-8' />
-				<link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png?v=rMJOo8Wqzp' />
-				<link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png?v=rMJOo8Wqzp' />
-				<link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png?v=rMJOo8Wqzp' />
-				<link rel='manifest' href='site.webmanifest?v=rMJOo8Wqzp' />
-				<link rel='mask-icon' href='safari-pinned-tab.svg?v=rMJOo8Wqzp' color='#e77224' />
-				<link rel='shortcut icon' href='favicon.ico?v=rMJOo8Wqzp' />
-				<meta name='msapplication-TileColor' content='#e77224' />
+
+				<link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png' />
+				<link rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png' />
+				<link rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png' />
+				<link rel='mask-icon' href='safari-pinned-tab.svg' color='#e77224' />
+				<link rel='shortcut icon' href='favicon.ico' />
 				<meta name='theme-color' content='#e77224' />
+
+				{/* eslint-disable */}
 				<link
 					href='https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap'
 					rel='stylesheet'
@@ -82,13 +82,13 @@ const Home = (props) => {
 
 				<Categorie id='ouTrouver' title='Où les trouver ?' />
 				<Disponible {...props} />
-				<Table />
 
 				<Categorie id='contact' title='Me contacter' />
 				<Contact></Contact>
 
 				<Questions {...props} />
 			</div>
+
 			<footer>
 				<div className='foot_wrap'>
 					<div className='index'>
@@ -121,8 +121,6 @@ const Home = (props) => {
 
 export async function getStaticProps() {
 	const dataFilePath = path.join(process.cwd(), 'public', 'database.json')
-	console.log(dataFilePath) // will be YourProject/api/api.json
-
 	const fileContents = fs.readFileSync(dataFilePath, 'utf8')
 	const data = JSON.parse(fileContents)
 

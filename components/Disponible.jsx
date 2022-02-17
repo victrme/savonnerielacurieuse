@@ -1,3 +1,5 @@
+import Table from '../components/table'
+
 const Disponible = (params) => {
 	const { boutiques, marches } = params.disponible
 
@@ -8,9 +10,9 @@ const Disponible = (params) => {
 			<div className='boutique_wrap'>
 				<p>
 					Directement à la savonnerie. S&apos;assurer de la disponibilité de la savonnière par un appel ou un
-					<a href='tel:+33643693967'>SMS</a> un jour ou deux à l&apos;avance. <br />
+					<a href='tel:+33643693967'> SMS</a> un jour ou deux à l&apos;avance. <br />
 					Sur commande via
-					<a href='mailto:savonnerielacurieuse@gmail.com'>l&apos;adresse email de la savonnerie.</a>
+					<a href='mailto:savonnerielacurieuse@gmail.com'> l&apos;adresse email de la savonnerie.</a>
 				</p>
 			</div>
 
@@ -51,6 +53,8 @@ const Disponible = (params) => {
 					</div>
 				))}
 			</div>
+
+			<Table />
 		</div>
 	)
 }

@@ -2,16 +2,16 @@ import useSWR from 'swr'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-const TableBody = ({ liste }) => {
+const TableBody = ({ annee, liste }) => {
 	return (
-		<div className='wrapper'>
-			<h3 id='events'>Evènements 2021</h3>
+		<>
+			<h3 id='events'>{'Evènements ' + annee}</h3>
 
 			<div className='table_wrap'>
 				<table>
 					<thead>
 						<tr>
-							<td>Mars</td>
+							<td>mars</td>
 							<td>avril</td>
 							<td>mai</td>
 							<td>juin</td>
@@ -30,7 +30,7 @@ const TableBody = ({ liste }) => {
 									<td key={i}>
 										<p>{date}</p>
 										{horaire ? <p>{horaire}</p> : ''}
-										<p>
+										<p className='nom'>
 											<strong>{nom}</strong>
 										</p>
 										<p>
@@ -50,7 +50,7 @@ const TableBody = ({ liste }) => {
 					</tbody>
 				</table>
 			</div>
-		</div>
+		</>
 	)
 }
 
@@ -68,17 +68,17 @@ const Table = () => {
 	}
 
 	if (data) {
-		const maxRows = Math.max(...Object.values(data).map((a) => a.length))
+		const maxRows = Math.max(...Object.values(data.mois).map((a) => a.length))
 		const fullTable = []
 		let row = []
 
 		for (let i = 0; i < maxRows; i++) {
-			Object.values(data).forEach((elem) => row.push(elem[i] ? elem[i] : {}))
+			Object.values(data.mois).forEach((elem) => row.push(elem[i] ? elem[i] : {}))
 			fullTable.push(row)
 			row = []
 		}
 
-		return <TableBody liste={fullTable}></TableBody>
+		return <TableBody annee={data.annee} liste={fullTable}></TableBody>
 	}
 }
 

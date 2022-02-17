@@ -10,7 +10,6 @@
 body {
 	margin: 0;
 	color: #222;
-	font-family: 'Amiri', serif;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 	cursor: default;
@@ -105,8 +104,8 @@ nav a:hover {
 }
 
 .content {
-	width: 100%;
-	margin: 2em 0;
+	width: calc(100% - 4em);
+	padding: 2em;
 	overflow-x: hidden;
 	background-color: #fff;
 }
@@ -118,6 +117,7 @@ nav a:hover {
 
 .categorie > div {
 	height: 70vh;
+	border-radius: 8px;
 	background-size: cover;
 	background-position: center;
 }
@@ -260,31 +260,35 @@ h3 {
 }
 
 .trouver_wrap {
-	max-width: 1200px;
+	max-width: 1600px;
 	text-align: left;
 	margin: auto;
 }
 
 .trouver_wrap h3 {
-	margin: 1em 0;
-	margin-top: 2em;
+	margin: 2em 0;
+	text-align: center;
 }
 
 .boutique_wrap {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
 .boutique_wrap div {
-	width: 300px;
-	margin: 2em;
+	width: 350px;
+	margin: 1em;
+	padding: 2em;
+	border: 1px solid #ddd;
+	border-radius: 8px;
 }
 
 .boutique_wrap h4 {
 	font-size: 1.5em;
 	line-height: 1.2em;
-	margin: 0.5em 0;
+	margin: 0;
+	margin-bottom: 0.5em;
 }
 
 .boutique_wrap li {
@@ -320,17 +324,16 @@ h3 {
 }
 
 h3#events {
-	margin-top: 2em;
+	text-align: center;
 }
 
 .table_wrap {
-	margin: 2em 0;
+	max-width: 1600px;
+	margin: 2em auto;
 	overflow-x: auto;
 }
 table {
-	margin: auto;
 	border-collapse: collapse;
-	max-width: 1200px;
 	empty-cells: hide;
 }
 thead td:first-child {
@@ -360,7 +363,11 @@ tbody td {
 	font-weight: normal;
 }
 tbody td p {
-	margin: 0.4em;
+	margin: 0em;
+}
+
+tbody td p.nom {
+	margin: 0.4em 0;
 }
 
 table small {
@@ -384,16 +391,16 @@ table .annule b {
 	padding-bottom: 5em;
 }
 .location {
-	width: 50%;
 	display: inline-block;
 	text-align: center;
-	padding: 1em;
-	padding-left: 2em;
-	min-width: 250px;
+	padding: 1em 2em;
+	margin-left: 10%;
 	font-size: 1.5em;
 	text-align: left;
 	line-height: 1em;
 	font-weight: bolder;
+	border: 1px solid #ddd;
+	border-radius: 8px;
 }
 h2#faq {
 	font-size: 2em;
@@ -479,12 +486,16 @@ footer .foot_wrap {
 		font-size: 5vw;
 	}
 
+	.categorie div {
+		height: 56vw;
+	}
+
 	.categorie h2 {
 		font-size: 2em;
 		line-height: 1em;
-		padding: 0.5em;
+		padding: 0.5em 1em;
 		margin-bottom: 0.5em;
-		transform: translateY(0px);
+		/* transform: translateY(0px); */
 	}
 
 	.content {
