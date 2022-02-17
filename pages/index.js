@@ -65,11 +65,11 @@ const Home = (props) => {
 			<div className='content'>
 				<div className='intro'>
 					<p className='fat'>
-						C'est à Vollore-Ville au coeur du parc régional Livradois-Forez que j'ai choisi de créer des savons
-						surgras à partir du procédé de saponification à froid.
+						C&apos;est à Vollore-Ville au coeur du parc régional Livradois-Forez que j&apos;ai choisi de créer des
+						savons surgras à partir du procédé de saponification à froid.
 					</p>
 					<p className='fat'>
-						Motivée par le désir de faire partager au plus grand nombre les bienfaits d'un savon doux et
+						Motivée par le désir de faire partager au plus grand nombre les bienfaits d&apos;un savon doux et
 						écologique, je crée en mars 2016 la savonnerie La Curieuse.
 					</p>
 				</div>

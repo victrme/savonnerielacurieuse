@@ -6,7 +6,7 @@ const Fabrication = (params) => (
 			<p className='fat'>
 				Cette méthode de fabrication artisanale garantit la présence de glycérine dans le savon et permet de conserver
 				une grande partie des propriétés bienfaisantes des huiles, beurres et huiles essentielles utilisés. <br />
-				C'est une méthode écologique dont le procédé de fabrication est sobre en énergie.
+				C&apos;est une méthode écologique dont le procédé de fabrication est sobre en énergie.
 			</p>
 		</div>
 
@@ -31,15 +31,15 @@ const Fabrication = (params) => (
 					</span>
 					<br />
 					<br />
-					<span>Il ne reste aucune trace de soude dans un savon "fini".</span>
+					<span>Il ne reste aucune trace de soude dans un savon &ldquo;fini&ldquo;.</span>
 				</p>
 			</div>
 			<div className='info_box'>
 				<h3>Le surgras</h3>
 				<p>
 					<span>
-						En cours de fabrication, j'enrichis mes savons d'huiles aux vertus apaisantes, régénérantes, et
-						nourrissantes. Ces huiles, ajoutées aux corps gras déjà saponifiés viennent sur-graisser le savon.
+						En cours de fabrication, j&apos;enrichis mes savons d&apos;huiles aux vertus apaisantes, régénérantes,
+						et nourrissantes. Ces huiles, ajoutées aux corps gras déjà saponifiés viennent sur-graisser le savon.
 					</span>
 					<br />
 					<span>
