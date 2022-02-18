@@ -31,12 +31,6 @@ const Home = (props) => {
 				<link rel='mask-icon' href='safari-pinned-tab.svg' color='#e77224' />
 				<link rel='shortcut icon' href='favicon.ico' />
 				<meta name='theme-color' content='#e77224' />
-
-				{/* eslint-disable */}
-				<link
-					href='https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap'
-					rel='stylesheet'
-				/>
 			</Head>
 
 			<div className='background'>

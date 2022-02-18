@@ -10,7 +10,7 @@
 	"dependencies": {
 		"@googlemaps/react-wrapper": "^1.1.24",
 		"blurhash": "^1.1.4",
-		"next": "^12.0.10",
+		"next": "^12.0.9",
 		"plaiceholder": "^2.3.0",
 		"react": "^17.0.2",
 		"react-blurhash": "^0.1.3",
