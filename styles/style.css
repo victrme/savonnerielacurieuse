@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
-
+/*/***/
 ::-moz-selection {
 	background-color: #e77224;
 	color: #ffffff;
@@ -171,17 +171,6 @@ h3 {
 	width: 12em;
 	height: 12em;
 	border-radius: 4px;
-}
-#hat {
-	position: relative;
-}
-#hatimg {
-	position: absolute;
-	height: 85px;
-	width: 85px;
-	transform: scaleX(-1) rotate(27deg);
-	left: -28px;
-	top: 10px;
 }
 
 .info_wrap {
@@ -559,10 +548,6 @@ footer .foot_wrap {
 		text-align: center;
 	}
 
-	.top {
-		display: block;
-	}
-
 	.savon .inner {
 		display: flex;
 		flex-direction: column;
@@ -586,9 +571,6 @@ footer .foot_wrap {
 		margin: 1em 0;
 	}
 
-	#map {
-		height: 300px;
-	}
 	.location {
 		padding: 0;
 		font-size: 1.4em;
