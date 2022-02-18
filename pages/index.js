@@ -10,7 +10,6 @@ import Categorie from '../components/Categorie'
 import Contact from '../components/Contact'
 
 import { getPlaiceholder } from 'plaiceholder'
-import { BlurhashCanvas } from 'react-blurhash'
 
 const Home = (props) => {
 	return (
@@ -129,23 +128,16 @@ export async function getStaticProps() {
 
 	const imagePaths = data.fabrication.map((item) => item.src + '.jpg')
 
-	const images = await Promise.all(
+	const blurs = await Promise.all(
 		imagePaths.map(async (src) => {
-			const { blurhash, img } = await getPlaiceholder('/images/fabrication/' + src)
-
-			return {
-				...img,
-				alt: '',
-				title: '',
-				blurhash,
-			}
+			const { base64 } = await getPlaiceholder('/images/fabrication/' + src)
+			return base64
 		})
 	).then((values) => values)
 
-	console.log(images)
-
 	return {
 		props: {
+			blurs,
 			...data,
 		},
 	}
