@@ -76,16 +76,16 @@ const Home = (props) => {
 					</p>
 				</div>
 
-				<Categorie id='saf' title='La saponification à froid' />
+				<Categorie id='saf' title='La saponification à froid' placeholder={props.categories[0]} />
 				<Fabrication {...props} />
 
-				<Categorie id='savons' title='Les savons' />
+				<Categorie id='savons' title='Les savons' placeholder={props.categories[1]} />
 				<Savons {...props} />
 
-				<Categorie id='ouTrouver' title='Où les trouver ?' />
+				<Categorie id='ouTrouver' title='Où les trouver ?' placeholder={props.categories[2]} />
 				<Disponible {...props} />
 
-				<Categorie id='contact' title='Me contacter' />
+				<Categorie id='contact' title='Me contacter' placeholder={props.categories[3]} />
 				<Contact></Contact>
 
 				<Questions {...props} />
@@ -122,23 +122,56 @@ const Home = (props) => {
 }
 
 export async function getStaticProps() {
+	async function getBlurDataURL(paths) {
+		const res = await Promise.all(
+			paths.map(async (src) => {
+				const { base64 } = await getPlaiceholder(src)
+				return base64
+			})
+		).then((values) => values)
+
+		return res
+	}
+
 	const dataFilePath = path.join(process.cwd(), 'public', 'database.json')
 	const fileContents = fs.readFileSync(dataFilePath, 'utf8')
-	const data = JSON.parse(fileContents)
+	let database = JSON.parse(fileContents)
 
-	const imagePaths = data.fabrication.map((item) => item.src + '.jpg')
+	// Fabrication
+	const fabrPaths = database.fabrication.map((item) => `/images/fabrication/${item.id}.jpg`)
+	const fabrBlurs = await getBlurDataURL(fabrPaths)
 
-	const blurs = await Promise.all(
-		imagePaths.map(async (src) => {
-			const { base64 } = await getPlaiceholder('/images/fabrication/' + src)
-			return base64
-		})
-	).then((values) => values)
+	// Savons
+	const savPaths = database.savons.map((item) => `/images/savons/${item.id}.jpg`)
+	const savBlurs = await getBlurDataURL(savPaths)
+
+	// Categories
+	const catPaths = [
+		'/images/categorie/saf.jpg',
+		'/images/categorie/savons.jpg',
+		'/images/categorie/ouTrouver.jpg',
+		'/images/categorie/contact.jpg',
+	]
+	const catBlurs = await getBlurDataURL(catPaths)
+
+	database = {
+		...database,
+		fabrication: database.fabrication.map((elem, i) => ({
+			...elem,
+			blurDataURL: fabrBlurs[i],
+		})),
+		savons: database.savons.map((elem, i) => ({
+			...elem,
+			blurDataURL: savBlurs[i],
+		})),
+		categories: catBlurs,
+	}
+
+	console.log(database)
 
 	return {
 		props: {
-			blurs,
-			...data,
+			...database,
 		},
 	}
 }

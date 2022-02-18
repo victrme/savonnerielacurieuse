@@ -3,10 +3,17 @@ import Image from 'next/image'
 const Savons = (params) => (
 	<div className='wrapper'>
 		<div className='savon_wrap'>
-			{Object.entries(params.savons).map(([key, { title, desc, surgras, compo }]) => (
-				<div key={key} id={key} className='savon'>
+			{params.savons.map(({ id, title, desc, surgras, compo, blurDataURL }) => (
+				<div key={id} id={id} className='savon'>
 					<div className='inner'>
-						<Image src={'/images/savons/' + key + '.jpg'} height={1080} width={1080} alt={'Savon' + title} />
+						<Image
+							src={`/images/savons/${id}.jpg`}
+							height={1080}
+							width={1080}
+							alt={`Savon ${title}`}
+							placeholder='blur'
+							blurDataURL={blurDataURL}
+						/>
 						<div>
 							<h3>{title}</h3>
 							<p>{desc}</p>

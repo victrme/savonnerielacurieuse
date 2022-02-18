@@ -70,11 +70,11 @@ const Contact = () => {
 
 	return (
 		<div className='adresse'>
-			<Wrapper apiKey={'AIzaSyCSVG3QHrJIBNNuteK_9SmJvi27KGhkhQw'} render={render}>
+			{/* <Wrapper apiKey={'AIzaSyCSVG3QHrJIBNNuteK_9SmJvi27KGhkhQw'} render={render}>
 				<Map center={center} zoom={zoom} style={{ width: 400, height: 400 }}>
 					<Marker position={center}></Marker>
 				</Map>
-			</Wrapper>
+			</Wrapper> */}
 
 			<div className='location'>
 				<p>

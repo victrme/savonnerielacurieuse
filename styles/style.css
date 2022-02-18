@@ -115,11 +115,12 @@ nav a:hover {
 	text-align: center;
 }
 
-.categorie > div {
-	height: 70vh;
+.categorie .image {
+	position: relative;
 	border-radius: 8px;
-	background-size: cover;
-	background-position: center;
+	width: 100%;
+	height: 46vw;
+	overflow: hidden;
 }
 
 .categorie h2 {
@@ -130,19 +131,6 @@ nav a:hover {
 	background-color: white;
 	border-radius: 8px;
 	transform: translateY(-40px);
-}
-
-#saf > div {
-	background-image: url('/images/categorie/fabrication.jpg');
-}
-#savons > div {
-	background-image: url('/images/categorie/suggestion.jpg');
-}
-#ouTrouver > div {
-	background-image: url('/images/categorie/stand.jpg');
-}
-#contact > div {
-	background-image: url('/images/categorie/volloreville.jpg');
 }
 
 h3 {

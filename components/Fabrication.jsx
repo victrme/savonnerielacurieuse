@@ -1,10 +1,6 @@
 import Image from 'next/image'
 
-const Fabrication = (params) => {
-	params.blurs.forEach((blur, i) => {
-		params.fabrication[i].blur = blur
-	})
-
+const Fabrication = (props) => {
 	return (
 		<>
 			<div className='fabr_intro'>
@@ -19,15 +15,15 @@ const Fabrication = (params) => {
 			<div className='fabr_wrap'>
 				<h3>création du savon Fanny</h3>
 
-				{params.fabrication.map(({ src, alt, step, blur }, i) => (
-					<div key={src} className='fabr_desc'>
+				{props.fabrication.map(({ id, alt, step, blurDataURL }, i) => (
+					<div key={alt} className='fabr_desc'>
 						<Image
+							src={`/images/fabrication/${id}.jpg`}
 							height={230}
 							width={230}
 							alt={alt}
 							placeholder='blur'
-							blurDataURL={blur}
-							src={'/images/fabrication/' + src + '.jpg'}
+							blurDataURL={blurDataURL}
 						/>
 						<p>{i + 1 + '- ' + step}</p>
 					</div>
