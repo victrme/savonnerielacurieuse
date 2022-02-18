@@ -61,10 +61,8 @@ nav a:hover {
 .background .image {
 	width: 60vw;
 	height: 100vh;
-	background: url('/images/bannieres/gland.jpg');
-	background-size: cover;
-	background-position: 75%;
 	filter: brightness(0.9);
+	position: relative;
 }
 
 .background .colour {

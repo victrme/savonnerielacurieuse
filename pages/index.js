@@ -35,7 +35,16 @@ const Home = (props) => {
 
 			<div className='background'>
 				<div className='colour'></div>
-				<div className='image'></div>
+				<div className='image'>
+					<Image
+						src='/images/banniere/accueil.jpg'
+						alt='Bannière: des glands du jardin'
+						layout='fill'
+						objectFit='cover'
+						placeholder='blur'
+						blurDataURL={props.accueil}
+					/>
+				</div>
 			</div>
 
 			<div className='wrapper'>
@@ -127,8 +136,8 @@ export async function getStaticProps() {
 		return res
 	}
 
-	const dataFilePath = path.join(process.cwd(), 'public', 'database.json')
-	const fileContents = fs.readFileSync(dataFilePath, 'utf8')
+	const filePath = path.join(process.cwd(), 'public', 'database.json')
+	const fileContents = fs.readFileSync(filePath, 'utf8')
 	let database = JSON.parse(fileContents)
 
 	// Fabrication
@@ -148,6 +157,9 @@ export async function getStaticProps() {
 	]
 	const catBlurs = await getBlurDataURL(catPaths)
 
+	// Accueil
+	const accBlur = await getBlurDataURL(['/images/banniere/accueil.jpg'])
+
 	database = {
 		...database,
 		fabrication: database.fabrication.map((elem, i) => ({
@@ -159,6 +171,7 @@ export async function getStaticProps() {
 			blurDataURL: savBlurs[i],
 		})),
 		categories: catBlurs,
+		accueil: accBlur,
 	}
 
 	console.log(database)
