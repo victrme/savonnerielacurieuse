@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Fabrication = (props) => {
+const Fabrication = ({ fabrication }) => {
 	return (
 		<>
 			<div className='fabr_intro'>
@@ -15,7 +15,7 @@ const Fabrication = (props) => {
 			<div className='fabr_wrap'>
 				<h3>création du savon Fanny</h3>
 
-				{props.fabrication.map(({ id, alt, step, blurDataURL }, i) => (
+				{fabrication.map(({ id, alt, step, blurDataURL }, i) => (
 					<div key={alt} className='fabr_desc'>
 						<Image
 							src={`/images/fabrication/${id}.jpg`}

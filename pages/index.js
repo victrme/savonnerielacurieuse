@@ -80,16 +80,16 @@ const Home = (props) => {
 				</div>
 
 				<Categorie id='saf' title='La saponification à froid' placeholder={props.categories[0]} />
-				<Fabrication {...props} />
+				<Fabrication fabrication={props.fabrication} />
 
 				<Categorie id='savons' title='Les savons' placeholder={props.categories[1]} />
-				<Savons {...props} />
+				<Savons savons={props.savons} />
 
 				<Categorie id='ouTrouver' title='Où les trouver ?' placeholder={props.categories[2]} />
-				<Disponible {...props} />
+				<Disponible />
 
 				<Categorie id='contact' title='Me contacter' placeholder={props.categories[3]} />
-				<Contact></Contact>
+				<Contact />
 
 				<Questions {...props} />
 			</div>
@@ -139,47 +139,31 @@ export async function getStaticProps() {
 	const filePath = path.join(process.cwd(), 'public', 'database.json')
 	const fileContents = fs.readFileSync(filePath, 'utf8')
 	let database = JSON.parse(fileContents)
+	const { fabrication, savons } = database
 
-	// Fabrication
-	const fabrPaths = database.fabrication.map((item) => `/images/fabrication/${item.id}.jpg`)
+	// Paths
+	const fabrPaths = fabrication.map((item) => `/images/fabrication/${item.id}.jpg`)
+	const savPaths = savons.map((item) => `/images/savons/${item.id}.jpg`)
+	const categories = ['saf', 'savons', 'ouTrouver', 'contact']
 	const fabrBlurs = await getBlurDataURL(fabrPaths)
 
-	// Savons
-	const savPaths = database.savons.map((item) => `/images/savons/${item.id}.jpg`)
+	// blurDataURL
 	const savBlurs = await getBlurDataURL(savPaths)
-
-	// Categories
-	const catPaths = [
-		'/images/categorie/saf.jpg',
-		'/images/categorie/savons.jpg',
-		'/images/categorie/ouTrouver.jpg',
-		'/images/categorie/contact.jpg',
-	]
-	const catBlurs = await getBlurDataURL(catPaths)
-
-	// Accueil
+	const catBlurs = await getBlurDataURL(categories.map((id) => `/images/categorie/${id}.jpg`))
 	const accBlur = await getBlurDataURL(['/images/banniere/accueil.jpg'])
+
+	const addDataURL = (target, blurs) => target.map((e, i) => ({ ...e, blurDataURL: blurs[i] }))
 
 	database = {
 		...database,
-		fabrication: database.fabrication.map((elem, i) => ({
-			...elem,
-			blurDataURL: fabrBlurs[i],
-		})),
-		savons: database.savons.map((elem, i) => ({
-			...elem,
-			blurDataURL: savBlurs[i],
-		})),
-		categories: catBlurs,
+		fabrication: addDataURL(fabrication, fabrBlurs),
+		savons: addDataURL(savons, savBlurs),
 		accueil: accBlur,
+		categories: catBlurs,
 	}
 
-	console.log(database)
-
 	return {
-		props: {
-			...database,
-		},
+		props: { ...database },
 	}
 }
 

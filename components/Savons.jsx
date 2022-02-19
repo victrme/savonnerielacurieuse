@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
-const Savons = (params) => (
+const Savons = ({ savons }) => (
 	<div className='wrapper'>
 		<div className='savon_wrap'>
-			{params.savons.map(({ id, title, desc, surgras, compo, blurDataURL }) => (
+			{savons.map(({ id, title, desc, surgras, compo, blurDataURL }) => (
 				<div key={id} id={id} className='savon'>
 					<div className='inner'>
 						<Image

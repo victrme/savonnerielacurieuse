@@ -1,0 +1,15 @@
+[
+	{ "nom": "Billom", "adresse": "Place de la Halle", "activite": "un lundi sur deux", "note": "" },
+	{
+		"nom": "Montferrand",
+		"adresse": "Place de la Fontaine",
+		"activite": "1er samedi du mois",
+		"note": ""
+	},
+	{
+		"nom": "Olliergues",
+		"adresse": "place de la mairie",
+		"activite": "les dimanches matin, du 1er juillet au 26 août",
+		"note": ""
+	}
+]

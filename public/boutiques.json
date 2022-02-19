@@ -1,0 +1,36 @@
+[
+	{
+		"nom": "Henne Indigo et Compagnie",
+		"web": ["http://www.henneindigoetcompagnie.fr/boutique/", "henneindigoetcompagnie.fr"],
+		"adresse": ["Boutique en ligne", ""]
+	},
+	{
+		"nom": "Épicerie Proxy Vollore-Ville",
+		"adresse": ["Place de l'Église", "63120 Vollore-Ville"],
+		"web": ["https://www.facebook.com/epicerieproxivolloreville/", "facebook"]
+	},
+	{
+		"nom": "Magasin de producteurs Aux Champs",
+		"adresse": ["19 route de Clermont", "63300 Thiers"],
+		"web": ["https://www.facebook.com/auxchampsthiers/", "facebook"]
+	},
+	{
+		"nom": "Pharmacie de La Monnerie",
+		"adresse": ["43 Rue de la Gare 63650", "La Monnerie-le-Montel"]
+	},
+	{
+		"nom": "Le Bio Sens",
+		"adresse": ["25 rue Fileterie", "63600 Ambert"],
+		"web": ["https://www.le-bio-sens.fr/", "le-bio-sens.fr"],
+		"note": "Savon ménager césar uniquement"
+	},
+	{
+		"nom": "L'auvergne en Vrac",
+		"adresse": ["3 rue Saint Amable", "63201 Riom"],
+		"note": "Savon ménager césar uniquement"
+	},
+	{
+		"nom": "L'Orange Bleue (Boutique associative & bio-équitable)",
+		"adresse": ["3 rue de la gravière", "63160 Billom"]
+	}
+]
