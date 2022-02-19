@@ -12,9 +12,8 @@ const Fabrication = ({ fabrication }) => {
 				</p>
 			</div>
 
+			<h3 id='creation-de-savon'>création du savon Fanny</h3>
 			<div className='fabr_wrap'>
-				<h3 id='creation-de-savon'>création du savon Fanny</h3>
-
 				{fabrication.map(({ id, alt, step, blurDataURL }, i) => (
 					<div key={alt} className='fabr_desc'>
 						<Image

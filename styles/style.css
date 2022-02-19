@@ -16,7 +16,6 @@ body {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 	cursor: default;
-	text-align: justify;
 	font-size: 21px;
 	line-height: 25px;
 	font-family: 'Amiri', serif;
@@ -106,8 +105,10 @@ nav a:hover {
 }
 
 .content {
-	width: calc(100% - 4em);
+	margin: auto;
 	padding: 2em;
+	max-width: 1600px;
+	width: calc(100% - 4em);
 	overflow-x: hidden;
 	background-color: #fff;
 }
@@ -122,6 +123,7 @@ nav a:hover {
 	border-radius: 8px;
 	width: 100%;
 	height: 46vw;
+	max-height: 750px;
 	overflow: hidden;
 }
 
@@ -138,6 +140,7 @@ nav a:hover {
 h3 {
 	margin: 0;
 	font-size: 2em;
+	line-height: 1em;
 }
 
 .fabr_intro {
@@ -145,10 +148,16 @@ h3 {
 	margin: 0 auto 10vh auto;
 }
 
-.fabr_wrap {
+#creation-de-savon {
 	text-align: center;
-	max-width: 1400px;
-	margin: auto;
+}
+
+.fabr_wrap {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 256px);
+	justify-content: center;
+	gap: 4em;
+	padding: 4em 2em;
 }
 
 .fabr_wrap h2,
@@ -156,15 +165,7 @@ h3 {
 	text-align: left;
 }
 
-.fabr_wrap h3 {
-	margin-left: 1.3em;
-}
-
 .fabr_desc {
-	display: inline-flex;
-	flex-wrap: wrap;
-	max-width: 12em;
-	margin: 1.5em;
 	text-align: left;
 }
 
@@ -173,9 +174,8 @@ h3 {
 }
 
 .fabr_desc img {
-	width: 12em;
-	height: 12em;
-	border-radius: 4px;
+	width: 100%;
+	border-radius: 8px;
 }
 
 .info_wrap {
@@ -201,13 +201,15 @@ h3 {
 
 .savon_wrap {
 	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(600px, 0.7fr));
+	justify-content: center;
+	align-items: flex-start;
+	gap: 4em;
 }
 
 .savon {
-	max-width: 33em;
-	display: inline-block;
 	text-align: left;
-	margin: 3em 1em 1em 1em;
 }
 
 .savon .inner {
@@ -216,6 +218,14 @@ h3 {
 	column-gap: 1em;
 	margin-bottom: 1em;
 	align-items: flex-start;
+}
+
+.savon .inner .image {
+	position: relative;
+	border-radius: 8px;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
 }
 
 .savon .inner h3 {
@@ -228,10 +238,6 @@ h3 {
 
 .savon .compo {
 	font-style: italic;
-}
-
-.savon img {
-	border-radius: 8px;
 }
 
 .savon_wrap .info_box {
@@ -402,6 +408,7 @@ table .annule b {
 
 h2#foire-aux-questions {
 	font-size: 3em;
+	line-height: 1em;
 	padding: 2em 0 1em 0;
 	margin: 0;
 	text-align: center;
@@ -415,7 +422,7 @@ h2#foire-aux-questions {
 
 .question h3 {
 	margin: 0;
-	font-size: 1.6rem;
+	font-size: 1.5em;
 }
 
 .question p {
@@ -425,38 +432,43 @@ h2#foire-aux-questions {
 }
 
 footer {
-	display: flex;
+	display: grid;
 	justify-content: space-evenly;
+	grid-template-columns: repeat(auto-fit, 600px);
 	align-items: center;
-	flex-wrap: wrap;
 	padding: 5em;
-	color: #ccc;
-	width: calc(100% - 10em);
-	overflow-y: hidden;
-	background-color: #222;
+	row-gap: 10em;
+	text-align: left;
+	background-color: #fed;
 }
 
 footer a {
-	color: #ccc;
+	display: inline-block;
 	text-decoration: none;
 	transition: all 0.2s;
 }
 
 footer a:hover {
-	color: #fff;
-	text-decoration: underline;
+	color: #e28f53;
+	transform: translateX(10px);
 }
 
 .logo {
-	font-size: 60px;
+	font-size: 70px;
+	color: #e28f53;
+	user-select: none;
 }
 
 .logo p,
 .logo h2 {
-	color: #666;
-	text-decoration: none;
 	margin: 0;
-	line-height: 0.9em;
+	line-height: 0.8em;
+}
+
+.logo small {
+	font-size: 0.6em;
+	font-weight: bold;
+	letter-spacing: -2px;
 }
 
 .index {
@@ -506,7 +518,6 @@ footer a:hover {
 		line-height: 1em;
 		padding: 0.5em 1em;
 		margin-bottom: 0.5em;
-		/* transform: translateY(0px); */
 	}
 
 	.content {
@@ -526,6 +537,41 @@ footer a:hover {
 	.location,
 	#map {
 		width: 100%;
+	}
+
+	.logo {
+		font-size: 55px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.savon_wrap {
+		grid-template-columns: auto;
+		gap: 4em;
+		padding: 0;
+	}
+
+	.savon .inner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.savon .inner .image {
+		margin: auto;
+	}
+
+	.savon .inner h3 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+	footer {
+		padding: 4em0;
+		grid-template-columns: auto;
+	}
+
+	.logo {
+		font-size: 40px;
 	}
 }
 
@@ -584,11 +630,6 @@ footer a:hover {
 		text-align: center;
 	}
 
-	.savon .inner {
-		display: flex;
-		flex-direction: column;
-	}
-
 	.savon,
 	.info_box {
 		text-align: justify;
@@ -611,5 +652,9 @@ footer a:hover {
 		padding: 0;
 		font-size: 1.4em;
 		text-align: center;
+	}
+
+	.logo {
+		font-size: 30px;
 	}
 }
