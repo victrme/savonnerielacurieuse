@@ -13,7 +13,7 @@ const Fabrication = ({ fabrication }) => {
 			</div>
 
 			<div className='fabr_wrap'>
-				<h3>création du savon Fanny</h3>
+				<h3 id='creation-de-savon'>création du savon Fanny</h3>
 
 				{fabrication.map(({ id, alt, step, blurDataURL }, i) => (
 					<div key={alt} className='fabr_desc'>
@@ -31,7 +31,7 @@ const Fabrication = ({ fabrication }) => {
 			</div>
 
 			<div className='info_wrap'>
-				<div className='info_box'>
+				<div id='saponification-surgras' className='info_box'>
 					<h3>La saponification</h3>
 					<p>
 						<span>

@@ -95,29 +95,68 @@ const Home = (props) => {
 			</div>
 
 			<footer>
-				<div className='foot_wrap'>
-					<div className='index'>
+				<div className='index'>
+					<div>
+						<h3>La saponification à froid</h3>
+
 						<li>
-							<a href='#savons'>Les savons</a>
+							<a href='#creation-de-savon'>Création du savon Fanny</a>
 						</li>
 						<li>
-							<a href='#ouTrouver'>Où les trouver</a>
-						</li>
-						<li>
-							<a href='#contact'>Me contacter</a>
+							<a href='#saponification-surgras'>Le processus</a>
 						</li>
 					</div>
 
-					<div className='logo'>
-						<h2>
-							Savonnerie
-							<br />
-							La Curieuse
-						</h2>
-						<p>
-							<small>depuis 2016</small>
-						</p>
+					<div>
+						<h3>Les savons</h3>
+						{props.savons.map((item) => (
+							<li key={item.id}>
+								<a href={'#' + item.id}>{item.title}</a>
+							</li>
+						))}
 					</div>
+
+					<div>
+						<h3>Où les trouver</h3>
+
+						<li>
+							<a href='#savonnerie'>A la savonnerie</a>
+						</li>
+
+						<li>
+							<a href='#boutiques'>En boutique</a>
+						</li>
+
+						<li>
+							<a href='#marches'>Aux marchés</a>
+						</li>
+
+						<li>
+							<a href='#events'>Aux évènements</a>
+						</li>
+					</div>
+
+					<div>
+						<h3>
+							<a href='#contact'>Me contacter</a>
+						</h3>
+					</div>
+
+					<div>
+						<h3>
+							<a href='#foire-aux-questions'>Foire aux Questions</a>
+						</h3>
+					</div>
+				</div>
+
+				<div className='logo'>
+					<h2>
+						<p>Savonnerie</p>
+						<p>La Curieuse</p>
+					</h2>
+					<p>
+						<small>depuis 2016</small>
+					</p>
 				</div>
 			</footer>
 		</>

@@ -4,6 +4,7 @@
 	background-color: #e77224;
 	color: #ffffff;
 }
+
 ::selection {
 	background-color: #e77224;
 	color: #ffffff;
@@ -154,9 +155,11 @@ h3 {
 .fabr_wrap h3 {
 	text-align: left;
 }
+
 .fabr_wrap h3 {
 	margin-left: 1.3em;
 }
+
 .fabr_desc {
 	display: inline-flex;
 	flex-wrap: wrap;
@@ -164,9 +167,11 @@ h3 {
 	margin: 1.5em;
 	text-align: left;
 }
+
 .fabr_desc p {
 	margin: 0.5em 0 1em 0;
 }
+
 .fabr_desc img {
 	width: 12em;
 	height: 12em;
@@ -179,6 +184,7 @@ h3 {
 	margin: auto;
 	max-width: 60em;
 }
+
 .info_box {
 	display: inline-block;
 	margin: 1em;
@@ -196,12 +202,14 @@ h3 {
 .savon_wrap {
 	text-align: center;
 }
+
 .savon {
 	max-width: 33em;
 	display: inline-block;
 	text-align: left;
 	margin: 3em 1em 1em 1em;
 }
+
 .savon .inner {
 	display: grid;
 	grid-template-columns: 200px 1fr;
@@ -209,9 +217,11 @@ h3 {
 	margin-bottom: 1em;
 	align-items: flex-start;
 }
+
 .savon .inner h3 {
 	margin: 0.5em 0;
 }
+
 .savon .inner p {
 	margin: 0;
 }
@@ -231,6 +241,7 @@ h3 {
 	max-width: 1000px;
 	text-align: left;
 }
+
 .savon_wrap .info_box p {
 	margin: 1em;
 }
@@ -246,7 +257,8 @@ h3 {
 }
 
 .trouver_wrap h3 {
-	margin: 2em 0;
+	padding-top: 3em;
+	margin: 0 0 1em 0;
 	text-align: center;
 }
 
@@ -303,25 +315,25 @@ h3 {
 	color: #e77224;
 }
 
-h3#events {
-	text-align: center;
-}
-
 .table_wrap {
 	max-width: 1600px;
 	margin: 2em auto;
 	overflow-x: auto;
 }
+
 table {
 	border-collapse: collapse;
 	empty-cells: hide;
 }
+
 thead td:first-child {
 	border-top-left-radius: 4px;
 }
+
 thead td:last-child {
 	border-top-right-radius: 4px;
 }
+
 thead td {
 	text-align: center;
 	font-size: 1.6rem;
@@ -329,19 +341,23 @@ thead td {
 	color: white;
 	background-color: #e77224;
 }
+
 td {
 	min-width: 200px;
 	vertical-align: top;
 	padding: 1rem;
 }
+
 tbody {
 	text-align: left;
 }
+
 tbody td {
 	box-sizing: border-box;
 	border: 1px solid #ddd;
 	font-weight: normal;
 }
+
 tbody td p {
 	margin: 0em;
 }
@@ -370,6 +386,7 @@ table .annule b {
 	flex-wrap: wrap;
 	padding-bottom: 5em;
 }
+
 .location {
 	display: inline-block;
 	text-align: center;
@@ -382,86 +399,100 @@ table .annule b {
 	border: 1px solid #ddd;
 	border-radius: 8px;
 }
-h2#faq {
-	font-size: 2em;
+
+h2#foire-aux-questions {
+	font-size: 3em;
+	padding: 2em 0 1em 0;
+	margin: 0;
 	text-align: center;
 }
+
 .question {
 	width: 70%;
 	margin: 3em auto;
 	overflow: hidden;
 }
+
 .question h3 {
 	margin: 0;
 	font-size: 1.6rem;
 }
+
 .question p {
 	display: block;
 	margin: 1em 0;
 	font-weight: normal;
 }
+
 footer {
-	position: relative;
-	width: 100%;
-	padding: 5em 0;
-	background-color: #222;
-	color: #aaa;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 5em;
+	color: #ccc;
+	width: calc(100% - 10em);
 	overflow-y: hidden;
+	background-color: #222;
 }
+
 footer a {
-	color: #aaa;
+	color: #ccc;
 	text-decoration: none;
 	transition: all 0.2s;
 }
+
 footer a:hover {
-	color: white;
-	transition: all 0.2s;
+	color: #fff;
+	text-decoration: underline;
 }
-footer .foot_wrap {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	max-width: 1000px;
-	margin: auto;
-	text-align: left;
-}
-.foot_wrap > div {
-	margin: 3em;
+
+.logo {
+	font-size: 60px;
 }
 
 .logo p,
 .logo h2 {
-	color: #fff;
+	color: #666;
 	text-decoration: none;
 	margin: 0;
-	line-height: 0.8em;
+	line-height: 0.9em;
+}
+
+.index {
+	display: flex;
+	flex-direction: column;
+}
+
+.index > div {
+	margin: 1em;
+}
+
+.index h3 {
+	margin: 0 0 0.5em 0;
+	font-size: 1.5em;
 }
 
 .index li {
 	list-style: none;
-}
-
-.index a {
-	white-space: nowrap;
-	text-align: right;
-	font-size: 1.6rem;
-	display: block;
-	line-height: 2em;
+	padding: 0.2em 0.5em;
 }
 
 @media all and (max-width: 1000px) {
 	.background .colour {
 		display: none;
 	}
+
 	.background .image {
 		width: 100vw;
 		filter: brightness(0.6);
 		background-position: 75%;
 	}
+
 	.accueil .titre h1 {
 		font-size: 12vw;
 	}
+
 	.accueil .titre p {
 		font-size: 5vw;
 	}
@@ -482,6 +513,7 @@ footer .foot_wrap {
 		margin-top: 0;
 		padding-top: 2em;
 	}
+
 	.info_wrap,
 	.info_box {
 		flex-wrap: wrap;
@@ -504,6 +536,7 @@ footer .foot_wrap {
 	.boutique_wrap div #map {
 		width: 100%;
 	}
+
 	.contact p,
 	.fabr_desc,
 	.question p,
@@ -518,12 +551,15 @@ footer .foot_wrap {
 	.accueil .titre h1 {
 		font-size: 50px;
 	}
+
 	.accueil .titre p {
 		font-size: 18px;
 	}
+
 	.accueil nav {
 		padding-top: 1em;
 	}
+
 	.accueil nav a {
 		font-size: 18px;
 		line-height: 18px;
@@ -558,16 +594,16 @@ footer .foot_wrap {
 		text-align: justify;
 		margin: 3em 0 1em 0;
 	}
+
 	.info_box {
 		padding: 1em;
 	}
+
 	.savon .inner img {
 		margin: 0 auto;
 	}
+
 	.boutique_wrap div {
-		margin: 1em 0;
-	}
-	.events .table_wrap {
 		margin: 1em 0;
 	}
 

@@ -82,10 +82,10 @@ const Events = () => {
 	}
 }
 
-const Bloc = ({ title, children }) => {
+const Bloc = ({ id, titre, children }) => {
 	return (
 		<>
-			<h3>{title}</h3>
+			<h3 id={id}>{titre}</h3>
 
 			<div className='boutique_wrap'>{children}</div>
 		</>
@@ -154,7 +154,7 @@ const Boutiques = () => {
 const Disponible = () => {
 	return (
 		<div className='trouver_wrap'>
-			<Bloc title='A la savonnerie'>
+			<Bloc id='savonnerie' titre='A la savonnerie'>
 				<p>
 					Directement à la savonnerie. S&apos;assurer de la disponibilité de la savonnière par un appel ou un
 					<a href='tel:+33643693967'> SMS</a> un jour ou deux à l&apos;avance. <br />
@@ -163,11 +163,11 @@ const Disponible = () => {
 				</p>
 			</Bloc>
 
-			<Bloc title='En Boutique'>
+			<Bloc id='boutiques' titre='En Boutique'>
 				<Boutiques />
 			</Bloc>
 
-			<Bloc title='Aux marchés'>
+			<Bloc id='marches' titre='Aux marchés'>
 				<Marches />
 			</Bloc>
 
