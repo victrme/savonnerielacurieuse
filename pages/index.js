@@ -97,7 +97,9 @@ const Home = (props) => {
 			<footer>
 				<div className='index'>
 					<div>
-						<h3>La saponification à froid</h3>
+						<h3>
+							<a href='#saf'>La saponification à froid</a>
+						</h3>
 
 						<li>
 							<a href='#creation-de-savon'>Création du savon Fanny</a>
@@ -108,7 +110,9 @@ const Home = (props) => {
 					</div>
 
 					<div>
-						<h3>Les savons</h3>
+						<h3>
+							<a href='#savons'>Les savons</a>
+						</h3>
 						{props.savons.map((item) => (
 							<li key={item.id}>
 								<a href={'#' + item.id}>{item.title}</a>
@@ -117,7 +121,9 @@ const Home = (props) => {
 					</div>
 
 					<div>
-						<h3>Où les trouver</h3>
+						<h3>
+							<a href='#ouTrouver'>Où les trouver</a>
+						</h3>
 
 						<li>
 							<a href='#savonnerie'>A la savonnerie</a>
