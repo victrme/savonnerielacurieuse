@@ -99,9 +99,9 @@ nav a:hover {
 }
 
 .intro {
-	max-width: 600px;
 	margin: auto;
-	width: 90vw;
+	max-width: 600px;
+	width: 100%;
 }
 
 .content {
@@ -156,7 +156,7 @@ h3 {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 256px);
 	justify-content: center;
-	gap: 4em;
+	gap: 2em;
 	padding: 4em 2em;
 }
 
@@ -206,6 +206,7 @@ h3 {
 	justify-content: center;
 	align-items: flex-start;
 	gap: 4em;
+	padding: 4em;
 }
 
 .savon {
@@ -397,7 +398,6 @@ table .annule b {
 	display: inline-block;
 	text-align: center;
 	padding: 1em 2em;
-	margin-left: 10%;
 	font-size: 1.5em;
 	text-align: left;
 	line-height: 1em;
@@ -602,6 +602,10 @@ footer a:hover {
 		font-size: 18px;
 	}
 
+	.fat {
+		font-size: 1em;
+	}
+
 	.accueil nav {
 		padding-top: 1em;
 	}
@@ -614,6 +618,12 @@ footer a:hover {
 
 	.categorie > div {
 		height: 50vh;
+	}
+
+	.categorie h2 {
+		font-size: 1.5em;
+		border-radius: 0;
+		transform: translateY(0px);
 	}
 
 	h3 {

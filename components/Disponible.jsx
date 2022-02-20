@@ -55,7 +55,7 @@ const TableBody = ({ annee, liste }) => {
 }
 
 const Events = () => {
-	const { data, error } = useSWR('/events.json', fetcher)
+	const { data, error } = useSWR('events.json', fetcher)
 
 	//
 	// Events liste les mois en ligne selon le mois avec le plus d'events
@@ -93,7 +93,7 @@ const Bloc = ({ id, titre, children }) => {
 }
 
 const Marches = () => {
-	const { data, error } = useSWR('/marches.json', fetcher)
+	const { data, error } = useSWR('marches.json', fetcher)
 
 	return error || !data ? (
 		<div>
@@ -116,7 +116,7 @@ const Marches = () => {
 }
 
 const Boutiques = () => {
-	const { data, error } = useSWR('/boutiques.json', fetcher)
+	const { data, error } = useSWR('boutiques.json', fetcher)
 
 	return error || !data ? (
 		<div>
