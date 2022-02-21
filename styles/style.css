@@ -386,12 +386,17 @@ table .annule b {
 	color: #f00;
 }
 
+#map {
+	width: 40%;
+	height: 400px;
+}
+
 .adresse {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding-bottom: 5em;
+	gap: 4em;
 }
 
 .location {
@@ -409,7 +414,7 @@ table .annule b {
 h2#foire-aux-questions {
 	font-size: 3em;
 	line-height: 1em;
-	padding: 2em 0 1em 0;
+	padding: 5em 0 1em 0;
 	margin: 0;
 	text-align: center;
 }
