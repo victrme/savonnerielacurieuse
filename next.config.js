@@ -1,8 +1,8 @@
 module.exports = {
 	reactStrictMode: true,
-	basePath: '/nextjs',
+	basePath: '',
 	images: {
 		loader: 'imgix',
-		path: 'https://savonnerielacurieuse.com/nextjs/',
+		path: 'https://savonnerielacurieuse.com/',
 	},
 }
