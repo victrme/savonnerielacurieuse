@@ -1,69 +1,36 @@
 {
-	"annee": 2021,
+	"annee": 2022,
 	"mois": {
 		"mars": [],
-		"avril": [
-			{
-				"nom": "Marché de producteurs",
-				"date": "Jeudi 22",
-				"horaire": "de 16h30 à 18h30",
-				"adresse": "Sauviat 63414"
-			},
-
-			{
-				"nom": "Marché de producteurs",
-				"date": "vendredi 23",
-				"horaire": "de 16h30 à 18h30",
-				"adresse": "Sermentizon 63418"
-			}
-		],
+		"avril": [],
 		"mai": [
 			{
-				"nom": "Marché de Culhat",
-				"date": "mercredi 12",
-				"horaire": "de 16h30 à 19h",
-				"adresse": "Culhat 63350"
+				"nom": "Foire écobiologique Humus à Châteldon",
+				"date": "dimanche 8",
+				"horaire": "à partir de 16h",
+				"adresse": "Châteldon 63290",
+				"note": "atelier produits d'entretien"
 			},
 			{
-				"nom": "Marché de producteurs",
-				"date": "jeudi 13",
-				"horaire": "de 16h à 19h",
-				"adresse": "Sauviat 63414"
-			},
-			{
-				"nom": "Marché de producteurs",
-				"date": "vendredi 14 & 28",
-				"horaire": "de 16h à 19h",
-				"adresse": "Sermentizon 63418"
+				"nom": "La marche gourmande des Lions",
+				"date": "vendredi 15",
+				"horaire": "",
+				"adresse": "marché de producteurs à Espace, Thiers 63300"
 			},
 			{
 				"nom": "Ambert Côté Jardin",
-				"date": "samedi 22 - dimanche 23",
+				"date": "samedi 21, dimanche 22",
 				"horaire": "de 10h à 19h",
 				"adresse": "Ambert 63600"
 			}
 		],
-		"juin": [
-			{
-				"nom": "Marché de producteurs",
-				"date": "vendredi 11",
-				"horaire": "de 16h à 19h",
-				"adresse": "Sermentizon 63418"
-			}
-		],
+		"juin": [],
 		"juillet": [
 			{
 				"nom": "marché de producteurs 'Les Terroirs du pays d'Olliergues'",
 				"date": "Les dimanches",
 				"horaire": "",
 				"adresse": "place de la mairie, Olliergues 63880",
-				"note": ""
-			},
-			{
-				"nom": "Fêtes médiévales au château de la Faye",
-				"date": "",
-				"horaire": "",
-				"adresse": "Olmet 63880",
 				"note": ""
 			}
 		],
@@ -76,20 +43,13 @@
 			},
 			{
 				"nom": "Festival des insectes",
-				"date": "jeudi 19",
+				"date": "jeudi 25",
 				"horaire": "",
 				"adresse": "La cité de l'abeille, Viscontat sur la terre 63250"
 			}
 		],
 		"septembre": [],
-		"octobre": [
-			{
-				"nom": "Fête de la Pomme",
-				"date": "",
-				"horaire": "",
-				"adresse": "Marsat 63200"
-			}
-		],
+		"octobre": [],
 		"novembre": [],
 		"decembre": []
 	}

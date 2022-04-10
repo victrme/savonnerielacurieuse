@@ -86,7 +86,6 @@ const Bloc = ({ id, titre, children }) => {
 	return (
 		<>
 			<h3 id={id}>{titre}</h3>
-
 			<div className='boutique_wrap'>{children}</div>
 		</>
 	)
@@ -97,8 +96,8 @@ const Marches = () => {
 
 	return error || !data ? (
 		<div>
-			<h4>...</h4>
-			<li>..., ...</li>
+			<h4>-------</h4>
+			<li>-------, -----------</li>
 		</div>
 	) : (
 		<>
@@ -120,15 +119,15 @@ const Boutiques = () => {
 
 	return error || !data ? (
 		<div>
-			<h4>...</h4>
+			<h4>------</h4>
 			<li>
-				<p>rue du Chateau</p>
-				<p>Vollore-Ville 63120</p>
+				<p>---------</p>
+				<p>---------------</p>
 			</li>
 		</div>
 	) : (
 		<>
-			{data.map(({ nom, web, adresse, plus }) => (
+			{data.map(({ nom, web, adresse, note }) => (
 				<div key={nom}>
 					<h4>{nom}</h4>
 					{web ? (
@@ -144,7 +143,7 @@ const Boutiques = () => {
 						<p>{adresse[0]}</p>
 						<p>{adresse[1]}</p>
 					</li>
-					{plus ? <li className='tag'>{plus}</li> : ''}
+					{note ? <li className='tag'>{note}</li> : ''}
 				</div>
 			))}
 		</>

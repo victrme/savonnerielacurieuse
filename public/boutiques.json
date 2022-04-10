@@ -32,5 +32,14 @@
 	{
 		"nom": "L'Orange Bleue (Boutique associative & bio-équitable)",
 		"adresse": ["3 rue de la gravière", "63160 Billom"]
+	},
+	{
+		"nom": "Boutique Les Adroits",
+		"adresse": ["21 place Saint Jean", "63600 Ambert"]
+	},
+	{
+		"nom": "Instinct Local",
+		"adresse": ["33 avenus de Vichy", "03200 Abrest"],
+		"note": "Savon ménager césar uniquement"
 	}
 ]

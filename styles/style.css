@@ -306,16 +306,19 @@ h3 {
 	border-bottom: 1px dotted #333;
 }
 
+.boutique_wrap li.tag {
+	display: inline-flex;
+	font-size: smaller;
+	margin: 10px 0 0 -16px;
+	padding: 2px 16px;
+	border-radius: 8px;
+	background-color: #e7722411;
+}
+
 .trouver_wrap div a:hover {
 	color: #e77224;
 	border-bottom: 1px dotted #e77224;
 	transition: all 0.2s;
-}
-
-.trouver_wrap div small {
-	color: #777;
-	font-size: 0.9rem;
-	line-height: 0.9rem;
 }
 
 .boutique_wrap b {
@@ -350,7 +353,7 @@ thead td {
 }
 
 td {
-	min-width: 200px;
+	min-width: 220px;
 	vertical-align: top;
 	padding: 1rem;
 }
