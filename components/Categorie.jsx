@@ -5,7 +5,7 @@ const Categorie = ({ id, title, placeholder }) => {
 		<div id={id} className='categorie' style={{ position: 'relative' }}>
 			<div className='image'>
 				<Image
-					src={`/images/categorie/${id}.jpg`}
+					src={`/images/categorie/${id}.webp`}
 					layout='fill'
 					objectFit='cover'
 					alt={title}

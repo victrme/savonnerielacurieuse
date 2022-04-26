@@ -17,7 +17,8 @@ body {
 	scroll-behavior: smooth;
 	cursor: default;
 	font-size: 21px;
-	line-height: 25px;
+	line-height: 30px;
+	letter-spacing: 0.2px;
 	font-family: 'Amiri', serif;
 }
 
@@ -188,15 +189,11 @@ h3 {
 .info_box {
 	display: inline-block;
 	margin: 1em;
-	padding: 1.5em;
-	color: #fafafa;
-	background-color: #e77224;
-	border-radius: 4px;
+	padding: 2em;
+	color: #a6561d;
+	background-color: #fff5eb;
+	border-radius: 8px;
 	text-align: justify;
-}
-
-.info_box h3 {
-	line-height: 1em;
 }
 
 .savon_wrap {
@@ -207,6 +204,20 @@ h3 {
 	align-items: flex-start;
 	gap: 4em;
 	padding: 4em;
+}
+
+.info_box.lessive {
+	text-align: left;
+}
+
+.info_box.lessive .info-titre {
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+.info_box.lessive .info-titre h4 {
+	margin: 0.2em;
+	line-height: 1em;
 }
 
 .savon {
@@ -239,18 +250,6 @@ h3 {
 
 .savon .compo {
 	font-style: italic;
-}
-
-.savon_wrap .info_box {
-	display: flex;
-	align-items: center;
-	margin: 4em auto;
-	max-width: 1000px;
-	text-align: left;
-}
-
-.savon_wrap .info_box p {
-	margin: 1em;
 }
 
 .wrapper {
@@ -573,8 +572,12 @@ footer a:hover {
 		margin-bottom: 1em;
 	}
 
+	.lessive {
+		margin-top: 4em;
+	}
+
 	footer {
-		padding: 4em0;
+		padding: 4em;
 		grid-template-columns: auto;
 	}
 
@@ -650,12 +653,15 @@ footer a:hover {
 
 	.savon,
 	.info_box {
-		text-align: justify;
 		margin: 3em 0 1em 0;
 	}
 
 	.info_box {
 		padding: 1em;
+	}
+
+	.lessive ul {
+		padding-left: 1.2em;
 	}
 
 	.savon .inner img {

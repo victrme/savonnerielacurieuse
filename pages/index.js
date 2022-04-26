@@ -51,8 +51,8 @@ const Home = (props) => {
 				<div className='colour'></div>
 				<div className='image'>
 					<Image
-						src='/images/banniere/accueil.jpg'
-						alt='Bannière: des glands du jardin'
+						src='/images/accueil.webp'
+						alt='Bannière: des fleurs du jardin'
 						layout='fill'
 						objectFit='cover'
 						placeholder='blur'
