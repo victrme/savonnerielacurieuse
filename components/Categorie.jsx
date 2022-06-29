@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Categorie = ({ id, title, placeholder }) => {
+const Categorie = ({ id, title, placeholder, alt }) => {
 	return (
 		<div id={id} className='categorie' style={{ position: 'relative' }}>
 			<div className='image'>
@@ -8,7 +8,7 @@ const Categorie = ({ id, title, placeholder }) => {
 					src={`/images/categorie/${id}.webp`}
 					layout='fill'
 					objectFit='cover'
-					alt={title}
+					alt={alt}
 					placeholder='blur'
 					blurDataURL={placeholder}
 				/>

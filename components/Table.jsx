@@ -8,19 +8,19 @@ const TableBody = ({ annee, liste }) => {
 			<h3 id='events'>{'Evènements ' + annee}</h3>
 
 			<div className='table_wrap'>
-				<table>
+				<table role='presentation'>
 					<thead>
 						<tr>
-							<td>mars</td>
-							<td>avril</td>
-							<td>mai</td>
-							<td>juin</td>
-							<td>juillet</td>
-							<td>août</td>
-							<td>septembre</td>
-							<td>octobre</td>
-							<td>novembre</td>
-							<td>décembre</td>
+							<th scope='col'>mars</th>
+							<th scope='col'>avril</th>
+							<th scope='col'>mai</th>
+							<th scope='col'>juin</th>
+							<th scope='col'>juillet</th>
+							<th scope='col'>août</th>
+							<th scope='col'>septembre</th>
+							<th scope='col'>octobre</th>
+							<th scope='col'>novembre</th>
+							<th scope='col'>décembre</th>
 						</tr>
 					</thead>
 					<tbody>

@@ -8,6 +8,8 @@ import Disponible from '../components/Disponible'
 import Questions from '../components/Questions'
 import Categorie from '../components/Categorie'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
+import Nav from '../components/Nav'
 
 import { getPlaiceholder } from 'plaiceholder'
 
@@ -16,36 +18,9 @@ const Home = (props) => {
 		<>
 			<Head>
 				<title>Savonnerie La Curieuse - Création de savons écologiques</title>
-				<meta
-					name='description'
-					content='Des savons 100% fait main crées à Vollore-Ville (Auvergne) selon la méthode ancestrale de saponification à froid.'
-				/>
-				<meta name='keywords' content='savon, Vollore-Ville, ecologique,cosmetique, soin' />
-				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<meta charSet='utf-8' />
-
-				<link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png' />
-				<link rel='icon' href='favicon.ico' />
-
-				<meta property='og:url' content='https://www.savonnerielacurieuse.com/' />
-				<meta property='og:type' content='website' />
-				<meta property='og:title' content='Savonnerie La Curieuse - Création de savons écologiques' />
-				<meta
-					property='og:description'
-					content='Des savons 100% fait main crées à Vollore-Ville (Auvergne) selon la méthode ancestrale de saponification à froid.'
-				/>
-				<meta property='og:image' content='/images/preview.webp' />
-
-				<meta name='twitter:card' content='summary_large_image' />
-				<meta property='twitter:domain' content='savonnerielacurieuse.com' />
-				<meta property='twitter:url' content='https://www.savonnerielacurieuse.com/' />
-				<meta name='twitter:title' content='Savonnerie La Curieuse - Création de savons écologiques' />
-				<meta
-					name='twitter:description'
-					content='Des savons 100% fait main crées à Vollore-Ville (Auvergne) selon la méthode ancestrale de saponification à froid.'
-				/>
-				<meta name='twitter:image' content='/images/preview.webp' />
 			</Head>
+
+			<Nav />
 
 			<div className='background'>
 				<div className='colour'></div>
@@ -61,27 +36,17 @@ const Home = (props) => {
 				</div>
 			</div>
 
-			<div className='wrapper'>
-				<div className='accueil'>
-					<nav>
-						<a href='#saf'>la saponification à froid</a>
-						<a href='#savons'>les savons</a>
-						<a href='#ouTrouver'>où les trouver</a>
-						<a href='#contact'>contact</a>
-					</nav>
-
-					<div className='titre'>
-						<h1>
-							<span>Savonnerie</span>
-							<br />
-							<span>La Curieuse</span>
-						</h1>
-						<p>création de savons écologiques</p>
-					</div>
+			<div className='wrapper accueil'>
+				<div>
+					<h1>
+						<span>Savonnerie</span>
+						<span>La Curieuse</span>
+					</h1>
+					<h2 role='presentation'>création de savons écologiques</h2>
 				</div>
 			</div>
 
-			<div className='content'>
+			<main className='content'>
 				<div className='intro'>
 					<p className='fat'>
 						C&apos;est à Vollore-Ville au coeur du parc régional Livradois-Forez que j&apos;ai choisi de créer des
@@ -93,92 +58,42 @@ const Home = (props) => {
 					</p>
 				</div>
 
-				<Categorie id='saf' title='La saponification à froid' placeholder={props.categories[0]} />
+				<Categorie
+					id='saf'
+					title='La saponification à froid'
+					alt='Savons découpé dans leurs moules'
+					placeholder={props.categories[0]}
+				/>
 				<Fabrication fabrication={props.fabrication} />
 
-				<Categorie id='savons' title='Les savons' placeholder={props.categories[1]} />
+				<Categorie
+					id='savons'
+					title='Les savons'
+					alt='Tout les savons découpés vu de haut'
+					placeholder={props.categories[1]}
+				/>
 				<Savons savons={props.savons} />
 
-				<Categorie id='ouTrouver' title='Où les trouver ?' placeholder={props.categories[2]} />
+				<Categorie
+					id='ouTrouver'
+					title='Où les trouver ?'
+					alt='Stand de marché avec César & karité'
+					placeholder={props.categories[2]}
+				/>
 				<Disponible />
 
-				<Categorie id='contact' title='Me contacter' placeholder={props.categories[3]} />
+				<Categorie
+					id='contact'
+					title='Me contacter'
+					alt="Vue d'ensemble de Vollore-Ville"
+					placeholder={props.categories[3]}
+				/>
 				<Contact />
 
 				<Questions {...props} />
-			</div>
+			</main>
 
-			<footer>
-				<div className='index'>
-					<div>
-						<h3>
-							<a href='#saf'>La saponification à froid</a>
-						</h3>
-
-						<li>
-							<a href='#creation-de-savon'>Création du savon Fanny</a>
-						</li>
-						<li>
-							<a href='#saponification-surgras'>Le processus</a>
-						</li>
-					</div>
-
-					<div>
-						<h3>
-							<a href='#savons'>Les savons</a>
-						</h3>
-						{props.savons.map((item) => (
-							<li key={item.id}>
-								<a href={'#' + item.id}>{item.title}</a>
-							</li>
-						))}
-					</div>
-
-					<div>
-						<h3>
-							<a href='#ouTrouver'>Où les trouver</a>
-						</h3>
-
-						<li>
-							<a href='#savonnerie'>A la savonnerie</a>
-						</li>
-
-						<li>
-							<a href='#boutiques'>En boutique</a>
-						</li>
-
-						<li>
-							<a href='#marches'>Aux marchés</a>
-						</li>
-
-						<li>
-							<a href='#events'>Aux évènements</a>
-						</li>
-					</div>
-
-					<div>
-						<h3>
-							<a href='#contact'>Me contacter</a>
-						</h3>
-					</div>
-
-					<div>
-						<h3>
-							<a href='#foire-aux-questions'>Foire aux Questions</a>
-						</h3>
-					</div>
-				</div>
-
-				<div className='logo'>
-					<h2>
-						<p>Savonnerie</p>
-						<p>La Curieuse</p>
-					</h2>
-					<p>
-						<small>depuis 2016</small>
-					</p>
-				</div>
-			</footer>
+			<Footer {...props} />
 		</>
 	)
 }

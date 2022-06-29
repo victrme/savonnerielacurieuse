@@ -24,7 +24,20 @@
 				"adresse": "Ambert 63600"
 			}
 		],
-		"juin": [],
+		"juin": [
+			{
+				"nom": "Marché gourmand",
+				"date": "vendredi 15",
+				"horaire": "à partir de 18h",
+				"adresse": "Escoutoux 63300"
+			},
+			{
+				"nom": "Fête de la pierre et du vin",
+				"date": "dimanche 26",
+				"horaire": "toute la journée",
+				"adresse": "Espirat 63160"
+			}
+		],
 		"juillet": [
 			{
 				"nom": "marché de producteurs 'Les Terroirs du pays d'Olliergues'",

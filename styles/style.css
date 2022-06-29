@@ -27,25 +27,83 @@ a {
 	color: #222;
 }
 
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 2em;
+	z-index: 2;
+}
+
 nav {
-	display: inline-flex;
-	flex-direction: column;
-	margin: 3em 0;
-	color: white;
+	display: flex;
+	width: fit-content;
+	justify-content: center;
+	margin: auto;
+	padding-bottom: 1em;
+	border-bottom: 1px dashed #fff;
 }
 
 nav a {
+	margin: 0 1em;
+	padding: 0.2em 0.5em;
+	border: 1px solid transparent;
 	color: white;
-	font-size: 25px;
-	padding: 5px 20px;
+	font-size: 1em;
 	font-weight: bold;
+	white-space: nowrap;
 	border-radius: 4px;
-	transition: background-color 0.1s, color 0.1s;
+	transition: all 0.05s;
 }
 
 nav a:hover {
-	background-color: white;
-	color: #e2a453;
+	border-color: #fff;
+	background-color: #fff2;
+}
+
+nav a:focus-within {
+	background-color: #fff4;
+	border-color: #fff;
+	outline: none;
+}
+
+nav #menu-logo {
+	display: none;
+	margin-right: 3em;
+}
+
+nav #menu-logo span {
+	display: block;
+	font-size: 0.7em;
+	line-height: 1em;
+}
+
+header.sticky {
+	position: fixed;
+	padding-top: 1em;
+}
+
+header.sticky #menu-logo {
+	display: block;
+}
+
+header.sticky nav {
+	padding: 1em;
+	border-radius: 10px;
+	border: 1px dashed #fff;
+	background-color: #fffffff8;
+}
+
+header.sticky nav a {
+	color: #333;
+}
+
+header.sticky nav a:focus,
+header.sticky nav a:hover {
+	color: #a6561d;
+	border-color: #a6561d;
+	background-color: #fff5eb;
 }
 
 .background {
@@ -73,24 +131,26 @@ nav a:hover {
 }
 
 .accueil {
-	min-height: 100vh;
-	padding-left: 5vh;
+	display: flex;
+	align-items: center;
+	margin-left: 4em;
+	height: 85vh;
 	color: white;
 }
 
-.accueil .titre {
-	margin: 10vh 0;
-}
-
-.accueil .titre h1 {
-	font-size: 140px;
+.accueil h1 {
+	font-size: 130px;
 	line-height: 0.8em;
 	margin: 0;
 }
 
-.accueil .titre p {
+.accueil h1 span {
+	display: block;
+}
+
+.accueil h2 {
 	margin: 0.5em 0;
-	font-size: 50px;
+	font-size: 45px;
 	font-weight: bolder;
 }
 
@@ -100,14 +160,15 @@ nav a:hover {
 }
 
 .intro {
-	margin: auto;
-	max-width: 600px;
-	width: 100%;
+	margin: 4em auto;
+	max-width: 100%;
+	width: 50em;
 }
 
 .content {
 	margin: auto;
 	padding: 2em;
+	border-radius: 10px;
 	max-width: 1600px;
 	width: calc(100% - 4em);
 	overflow-x: hidden;
@@ -193,7 +254,6 @@ h3 {
 	color: #a6561d;
 	background-color: #fff5eb;
 	border-radius: 8px;
-	text-align: justify;
 }
 
 .savon_wrap {
@@ -369,6 +429,7 @@ tbody td {
 
 tbody td p {
 	margin: 0em;
+	line-height: 26px;
 }
 
 tbody td p.nom {
@@ -452,12 +513,12 @@ footer {
 footer a {
 	display: inline-block;
 	text-decoration: none;
-	transition: all 0.2s;
+	transition: all 0.05s;
 }
 
 footer a:hover {
 	color: #e28f53;
-	transform: translateX(10px);
+	transform: translateX(8px);
 }
 
 .logo {
@@ -483,13 +544,13 @@ footer a:hover {
 	flex-direction: column;
 }
 
-.index > div {
-	margin: 1em;
+.index h3 {
+	margin: 1em 0 0.2em 0;
+	font-size: 1.5em;
 }
 
-.index h3 {
-	margin: 0 0 0.5em 0;
-	font-size: 1.5em;
+.index ul {
+	padding-left: 0.5em;
 }
 
 .index li {
@@ -508,11 +569,11 @@ footer a:hover {
 		background-position: 75%;
 	}
 
-	.accueil .titre h1 {
+	.accueil h1 {
 		font-size: 12vw;
 	}
 
-	.accueil .titre p {
+	.accueil p {
 		font-size: 5vw;
 	}
 
@@ -605,11 +666,11 @@ footer a:hover {
 		margin-right: 0;
 	}
 
-	.accueil .titre h1 {
+	.accueil h1 {
 		font-size: 50px;
 	}
 
-	.accueil .titre p {
+	.accueil p {
 		font-size: 18px;
 	}
 
