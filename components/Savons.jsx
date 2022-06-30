@@ -33,7 +33,7 @@ const Savons = ({ savons }) => (
 					<h3>éco-lessive simple et efficace</h3>
 					<h4>Je divise mon budget lessive par trois !</h4>
 				</div>
-				<ul>
+				<ol>
 					<li>
 						râper 50g de <b>savon ménager César</b> dans un saladier
 					</li>
@@ -43,7 +43,7 @@ const Savons = ({ savons }) => (
 					<li>verser 1L d’eau très chaude sur le mélange</li>
 					<li>laisser fondre</li>
 					<li>ajouter de l&apos;eau froide jusqu&apos;à obtenir 2L de lessive. C&apos;est prêt !</li>
-				</ul>
+				</ol>
 				<p>Pour des textiles délicats, il suffit de réaliser cette lessive sans les cristaux de soude.</p>
 			</div>
 		</div>

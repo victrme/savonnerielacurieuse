@@ -2,6 +2,31 @@ import useSWR from 'swr'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
+const TableCell = ({ nom, date, horaire, adresse, note }) => {
+	return nom ? (
+		<>
+			<p>{date}</p>
+			{horaire && <p>{horaire}</p>}
+
+			<p className='nom'>
+				<strong>{nom}</strong>
+			</p>
+
+			<p>
+				<small>{adresse}</small>
+			</p>
+
+			{note && (
+				<p>
+					<small>{note}</small>
+				</p>
+			)}
+		</>
+	) : (
+		''
+	)
+}
+
 const TableBody = ({ annee, liste }) => {
 	return (
 		<>
@@ -11,38 +36,24 @@ const TableBody = ({ annee, liste }) => {
 				<table>
 					<thead>
 						<tr>
-							<td>mars</td>
-							<td>avril</td>
-							<td>mai</td>
-							<td>juin</td>
-							<td>juillet</td>
-							<td>août</td>
-							<td>septembre</td>
-							<td>octobre</td>
-							<td>novembre</td>
-							<td>décembre</td>
+							<td scope='col'>mars</td>
+							<td scope='col'>avril</td>
+							<td scope='col'>mai</td>
+							<td scope='col'>juin</td>
+							<td scope='col'>juillet</td>
+							<td scope='col'>août</td>
+							<td scope='col'>septembre</td>
+							<td scope='col'>octobre</td>
+							<td scope='col'>novembre</td>
+							<td scope='col'>décembre</td>
 						</tr>
 					</thead>
 					<tbody>
 						{liste.map((row, i) => (
 							<tr key={i}>
-								{row.map(({ nom, date, horaire, adresse, note }, i) => (
+								{row.map((info, i) => (
 									<td key={i}>
-										<p>{date}</p>
-										{horaire ? <p>{horaire}</p> : ''}
-										<p className='nom'>
-											<strong>{nom}</strong>
-										</p>
-										<p>
-											<small>{adresse}</small>
-										</p>
-										{note ? (
-											<p>
-												<small>{note}</small>
-											</p>
-										) : (
-											''
-										)}
+										<TableCell {...info} />
 									</td>
 								))}
 							</tr>
@@ -130,20 +141,21 @@ const Boutiques = () => {
 			{data.map(({ nom, web, adresse, note }) => (
 				<div key={nom}>
 					<h4>{nom}</h4>
-					{web ? (
+
+					{note && <li className='tag'>{note}</li>}
+
+					{web && (
 						<li>
 							<a href={web[0]} rel='noopener'>
 								{web[1]}
 							</a>
 						</li>
-					) : (
-						''
 					)}
+
 					<li>
 						<p>{adresse[0]}</p>
 						<p>{adresse[1]}</p>
 					</li>
-					{note ? <li className='tag'>{note}</li> : ''}
 				</div>
 			))}
 		</>
@@ -154,12 +166,13 @@ const Disponible = () => {
 	return (
 		<div className='trouver_wrap'>
 			<Bloc id='savonnerie' titre='A la savonnerie'>
-				<p>
-					Directement à la savonnerie. S&apos;assurer de la disponibilité de la savonnière par un appel ou un
-					<a href='tel:+33643693967'> SMS</a> un jour ou deux à l&apos;avance. <br />
-					Sur commande via
-					<a href='mailto:savonnerielacurieuse@gmail.com'> l&apos;adresse email de la savonnerie.</a>
-				</p>
+				<ul id='alasavonnerie'>
+					<li>
+						Directement à la savonnerie. S&apos;assurer de la disponibilité de la savonnière par un appel ou un SMS
+						un jour ou deux à l&apos;avance.
+					</li>
+					<li>Sur commande via l&apos;adresse mail de la savonnerie.</li>
+				</ul>
 			</Bloc>
 
 			<Bloc id='boutiques' titre='En Boutique'>

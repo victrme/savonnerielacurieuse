@@ -1,4 +1,4 @@
-const Footer = (props) => {
+const Footer = ({ savons }) => {
 	return (
 		<footer>
 			<div className='index'>
@@ -19,7 +19,7 @@ const Footer = (props) => {
 					<a href='#savons'>Les savons</a>
 				</h3>
 				<ul>
-					{props.savons.map((item) => (
+					{savons.map((item) => (
 						<li key={item.id}>
 							<a href={'#' + item.id}>{item.title}</a>
 						</li>

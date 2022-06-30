@@ -13,9 +13,9 @@ const Fabrication = ({ fabrication }) => {
 			</div>
 
 			<h3 id='creation-de-savon'>création du savon Fanny</h3>
-			<div className='fabr_wrap'>
+			<ol className='fabr_wrap'>
 				{fabrication.map(({ id, alt, step, blurDataURL }, i) => (
-					<div key={alt} className='fabr_desc'>
+					<li key={alt} className='fabr_desc'>
 						<Image
 							src={`/images/fabrication/${id}.jpg`}
 							height={230}
@@ -25,9 +25,9 @@ const Fabrication = ({ fabrication }) => {
 							blurDataURL={blurDataURL}
 						/>
 						<p>{i + 1 + '- ' + step}</p>
-					</div>
+					</li>
 				))}
-			</div>
+			</ol>
 
 			<div className='info_wrap'>
 				<div id='saponification-surgras' className='info_box'>

@@ -17,36 +17,39 @@ const Home = (props) => {
 	return (
 		<>
 			<Head>
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<title>Savonnerie La Curieuse - Création de savons écologiques</title>
 			</Head>
 
 			<Nav />
 
-			<div className='background'>
-				<div className='colour'></div>
-				<div className='image'>
-					<Image
-						src='/images/accueil.webp'
-						alt='Bannière: des fleurs du jardin'
-						layout='fill'
-						objectFit='cover'
-						placeholder='blur'
-						blurDataURL={props.accueil}
-					/>
+			<section>
+				<div className='background'>
+					<div className='colour'></div>
+					<div className='image'>
+						<Image
+							src='/images/accueil.webp'
+							alt='Bannière: des fleurs du jardin'
+							layout='fill'
+							objectFit='cover'
+							placeholder='blur'
+							blurDataURL={props.accueil}
+						/>
+					</div>
 				</div>
-			</div>
 
-			<div className='wrapper accueil'>
-				<div>
-					<h1>
-						<span>Savonnerie</span>
-						<span>La Curieuse</span>
-					</h1>
-					<h2 role='presentation'>création de savons écologiques</h2>
+				<div className='wrapper accueil'>
+					<div>
+						<h1>
+							<span>Savonnerie</span>
+							<span>La Curieuse</span>
+						</h1>
+						<h2 role='presentation'>création de savons écologiques</h2>
+					</div>
 				</div>
-			</div>
+			</section>
 
-			<main className='content'>
+			<main>
 				<div className='intro'>
 					<p className='fat'>
 						C&apos;est à Vollore-Ville au coeur du parc régional Livradois-Forez que j&apos;ai choisi de créer des
@@ -90,10 +93,10 @@ const Home = (props) => {
 				/>
 				<Contact />
 
-				<Questions {...props} />
+				<Questions faq={props?.faq} />
 			</main>
 
-			<Footer {...props} />
+			<Footer savons={props?.savons} />
 		</>
 	)
 }

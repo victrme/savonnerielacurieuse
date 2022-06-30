@@ -7,9 +7,10 @@ const Nav = () => {
 		const getScrollPos = (e) => {
 			if (document) {
 				const footerheight = document.querySelector('footer').getBoundingClientRect().height
+				const { scrollY, innerHeight } = window
 
-				const isBelowFold = e.view.scrollY > window.innerHeight
-				const isAboveFooter = e.view.scrollY + window.innerHeight < document.body.scrollHeight - footerheight
+				const isBelowFold = scrollY > innerHeight
+				const isAboveFooter = scrollY + innerHeight < document.body.scrollHeight - footerheight
 
 				setSticky(isBelowFold && isAboveFooter)
 			}
