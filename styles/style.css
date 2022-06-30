@@ -504,8 +504,50 @@ table small {
 }
 
 #map {
+	position: relative;
 	width: 40%;
 	height: 400px;
+	background-image: url('../public/images/maps.png');
+	background-size: cover;
+}
+
+#map #map-activate {
+	position: absolute;
+	display: flex;
+	place-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff2;
+	backdrop-filter: blur(5px);
+	cursor: pointer;
+}
+
+#map #map-activate:hover {
+	background-color: #fff9;
+}
+
+@supports not (backdrop-filter: none) {
+	#map #map-activate {
+		background-color: #fffc;
+	}
+}
+
+#map #map-activate button {
+	font-size: 1em;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	padding: 0.3em 1em;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+#map #map-activate:hover button {
+	color: var(--text-highlight);
+	border-color: var(--text-highlight);
+	background-color: var(--background-highlight);
 }
 
 .adresse {

@@ -1,6 +1,9 @@
 import Script from 'next/script'
+import { useState } from 'react'
 
 const Contact = () => {
+	const [acceptsMap, setAcceptsMap] = useState(false)
+
 	const initMap = () => {
 		const pos = { lat: 45.785589, lng: 3.599444 }
 
@@ -17,7 +20,13 @@ const Contact = () => {
 	return (
 		<>
 			<div className='adresse'>
-				<div id='map'></div>
+				<div id='map'>
+					{!acceptsMap && (
+						<div id='map-activate' onClick={() => setAcceptsMap(true)} role='button'>
+							<button>Voir sur Maps</button>
+						</div>
+					)}
+				</div>
 
 				<div className='location'>
 					<p>
@@ -36,11 +45,14 @@ const Contact = () => {
 					</p>
 				</div>
 			</div>
-			<Script
-				src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCSVG3QHrJIBNNuteK_9SmJvi27KGhkhQw&libraries=&v=weekly'
-				strategy='lazyOnload'
-				onLoad={() => initMap()}
-			/>
+
+			{acceptsMap && (
+				<Script
+					src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCSVG3QHrJIBNNuteK_9SmJvi27KGhkhQw&libraries=&v=weekly'
+					strategy='lazyOnload'
+					onLoad={() => initMap()}
+				/>
+			)}
 		</>
 	)
 }
