@@ -36,17 +36,24 @@ header {
 }
 
 nav {
-	display: flex;
-	width: fit-content;
-	justify-content: center;
 	margin: auto;
-	column-gap: 1.5em;
-	padding-bottom: 1em;
+	width: fit-content;
 	border-bottom: 1px dashed #fff;
+	padding-bottom: 1em;
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 1.5em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 nav a {
-	padding: 0.2em 0.5em;
+	padding: 0 0.5em;
 	border: 1px solid transparent;
 	color: white;
 	font-size: 1em;
@@ -69,13 +76,43 @@ nav a:focus-within {
 
 nav #menu-logo {
 	display: none;
+}
+
+nav #menu-logo a {
 	margin-right: 3em;
+	padding: 0.2em 0.5em;
 }
 
 nav #menu-logo span {
 	display: block;
 	font-size: 0.7em;
 	line-height: 1em;
+}
+
+nav #menu-hamburger {
+	display: none;
+	padding: 6px;
+	border: 1px solid transparent;
+	background-color: transparent;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+nav #menu-hamburger div {
+	height: 2px;
+	width: 20px;
+	background-color: #666;
+	border-radius: 1px;
+	margin: 4px;
+}
+
+nav #menu-hamburger:hover {
+	border: 1px solid var(--text-highlight);
+	background-color: var(--background-highlight);
+}
+
+nav #menu-hamburger:hover div {
+	background-color: var(--text-highlight);
 }
 
 @keyframes fadeIn {
@@ -95,13 +132,12 @@ header.sticky {
 }
 
 header.sticky #menu-logo {
-	display: block;
+	display: flex;
 }
 
 header.sticky nav {
-	padding: 1em;
+	padding: 0.7em;
 	border-radius: 10px;
-	border: 1px dashed #fff;
 	background-color: #fffffff8;
 }
 
@@ -577,6 +613,16 @@ footer a:hover {
 	padding: 0.2em 0.5em;
 }
 
+@media all and (max-width: 1200px) {
+	nav ul {
+		gap: 1em;
+	}
+
+	nav #menu-logo a {
+		margin-right: 2em;
+	}
+}
+
 @media all and (max-width: 1000px) {
 	.background .colour {
 		display: none;
@@ -595,13 +641,44 @@ footer a:hover {
 	}
 
 	nav {
-		padding-left: 2em;
-		padding-right: 2em;
-		column-gap: 1em;
-		row-gap: 0.5em;
-		flex-wrap: wrap;
+		padding: 0 2em;
 		border-bottom: none;
+	}
+
+	nav ul {
+		flex-wrap: wrap;
 		justify-content: flex-start;
+		row-gap: 0.5em;
+	}
+
+	header.sticky nav ul {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5em;
+	}
+
+	header.sticky nav ul li:not(:first-child) {
+		display: none;
+	}
+
+	header.sticky.toggled nav ul li:not(:first-child) {
+		display: block;
+	}
+
+	header.sticky nav #menu-logo {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin: 0;
+	}
+
+	header.sticky.toggled nav #menu-logo {
+		margin-bottom: 1em;
+	}
+
+	header.sticky nav #menu-logo #menu-hamburger {
+		display: block;
 	}
 
 	nav a {
@@ -706,11 +783,24 @@ footer a:hover {
 		margin-right: 0;
 	}
 
+	header.sticky {
+		padding-top: 0.3em;
+	}
+
+	header.sticky nav {
+		padding: 0.5em;
+	}
+
+	.accueil {
+		margin-left: 1em;
+		min-height: 100vh;
+	}
+
 	.accueil h1 {
 		font-size: 50px;
 	}
 
-	.accueil p {
+	.accueil h2 {
 		font-size: 18px;
 	}
 
