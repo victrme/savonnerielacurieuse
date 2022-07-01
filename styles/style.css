@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=STIX+Two+Text:wght@400;600&family=Spectral:wght@300;400&display=swap');
 
 :root {
 	--accent-strong: #e77224;
@@ -14,11 +14,16 @@ body {
 	color: #222;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
-	cursor: default;
-	font-size: 21px;
-	line-height: 30px;
-	letter-spacing: 0.2px;
+	font-family: 'STIX Two Text', serif;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+nav #menu-logo span,
+footer .logo,
+.accueil {
 	font-family: 'Amiri', serif;
+	white-space: pre;
 }
 
 a {
@@ -53,7 +58,7 @@ nav ul {
 }
 
 nav a {
-	padding: 0 0.5em;
+	padding: 0.5em;
 	border: 1px solid transparent;
 	color: white;
 	font-size: 1em;
@@ -197,22 +202,6 @@ header.sticky nav a:hover {
 .accueil h2 {
 	margin: 0.5em 0;
 	font-size: 45px;
-	font-weight: bolder;
-}
-
-.fat {
-	font-size: 1.2em;
-	line-height: 1.2em;
-}
-
-.intro {
-	width: 35em;
-	max-width: calc(100% - 8em);
-	padding: 2em 4em;
-	margin: 4em auto 0 auto;
-	border-radius: 10px;
-	color: var(--text-highlight);
-	background-color: var(--background-highlight);
 }
 
 main {
@@ -226,7 +215,7 @@ main {
 }
 
 .categorie {
-	margin-top: 25vh;
+	margin-top: 10em;
 	text-align: center;
 }
 
@@ -234,16 +223,16 @@ main {
 	position: relative;
 	border-radius: 8px;
 	width: 100%;
-	height: 46vw;
-	max-height: 750px;
+	height: 40vw;
+	max-height: 650px;
 	overflow: hidden;
 }
 
 .categorie h2 {
 	display: inline-block;
-	font-size: 3.5em;
+	font-size: 3em;
 	margin: 0;
-	padding: 1em;
+	padding: 0.75em 1em;
 	background-color: white;
 	border-radius: 8px;
 	transform: translateY(-40px);
@@ -255,9 +244,20 @@ h3 {
 	line-height: 1em;
 }
 
+.intro {
+	width: 35em;
+	max-width: calc(100% - 8em);
+	padding: 2em 4em;
+	margin: 4em auto 0 auto;
+	border-radius: 10px;
+	font-size: 1.2em;
+	color: var(--text-highlight);
+	background-color: var(--background-highlight);
+}
+
 .fabr_intro {
-	max-width: 800px;
-	margin: 0 auto 10vh auto;
+	max-width: 40em;
+	margin: 0 auto 5em auto;
 }
 
 #creation-de-savon {
@@ -608,14 +608,17 @@ footer {
 }
 
 footer a {
+	border-radius: 4px;
+	border: 1px solid transparent;
+	padding: 0.25em 0.5em;
 	display: inline-block;
 	text-decoration: none;
 	transition: all 0.05s;
 }
 
 footer a:hover {
+	border-color: var(--text-footer-highlight);
 	color: var(--text-footer-highlight);
-	transform: translateX(8px);
 }
 
 .logo {
@@ -652,7 +655,12 @@ footer a:hover {
 
 .index li {
 	list-style: none;
-	padding: 0.2em 0.5em;
+}
+
+@media all and (min-height: 910px) and (min-width: 1200px) {
+	body {
+		font-size: 18px;
+	}
 }
 
 @media all and (max-width: 1200px) {
@@ -731,7 +739,7 @@ footer a:hover {
 		font-size: 12vw;
 	}
 
-	.accueil p {
+	.accueil h2 {
 		font-size: 5vw;
 	}
 
@@ -744,6 +752,10 @@ footer a:hover {
 		line-height: 1em;
 		padding: 0.5em 1em;
 		margin-bottom: 0.5em;
+	}
+
+	h2#foire-aux-questions {
+		font-size: 2em;
 	}
 
 	main {
@@ -761,9 +773,12 @@ footer a:hover {
 		margin-left: 0 !important;
 	}
 
-	.location,
 	#map {
 		width: 100%;
+	}
+
+	.location {
+		width: fit-content;
 	}
 
 	.logo {
@@ -801,7 +816,7 @@ footer a:hover {
 		grid-template-columns: auto;
 	}
 
-	.logo {
+	footer .logo {
 		font-size: 40px;
 	}
 }
@@ -835,7 +850,7 @@ footer a:hover {
 
 	.accueil {
 		margin-left: 1em;
-		min-height: 100vh;
+		min-height: 90vh;
 	}
 
 	.accueil h1 {
@@ -854,10 +869,13 @@ footer a:hover {
 		height: 50vh;
 	}
 
+	.categorie .image {
+		height: 16em;
+	}
+
 	.categorie h2 {
-		font-size: 1.5em;
-		border-radius: 0;
-		transform: translateY(0px);
+		width: calc(100% - 3em);
+		transform: translateY(-20px);
 	}
 
 	h3 {
@@ -869,6 +887,7 @@ footer a:hover {
 	}
 
 	.intro {
+		font-size: 1em;
 		margin-top: 0;
 		padding: 1em 2em;
 		max-width: calc(100% - 4em);
@@ -902,12 +921,15 @@ footer a:hover {
 	}
 
 	.location {
-		padding: 0;
-		font-size: 1.4em;
-		text-align: center;
+		padding: 1em 2em;
+		font-size: 1.2em;
 	}
 
-	.logo {
+	footer .index ul {
+		margin: 0;
+	}
+
+	footer .logo {
 		font-size: 30px;
 	}
 }
