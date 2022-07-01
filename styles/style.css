@@ -657,6 +657,16 @@ footer a:hover {
 	list-style: none;
 }
 
+@media all and (max-height: 900px) {
+	.accueil h1 {
+		font-size: 90px;
+	}
+
+	.accueil h2 {
+		font-size: 30px;
+	}
+}
+
 @media all and (min-height: 910px) and (min-width: 1200px) {
 	body {
 		font-size: 18px;
